@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuBtns.uss?fileID=7433441132597879392&amp;guid=9ed4d19ed685b744889ef9f599b5ff35&amp;type=3#MainMenuBtns" />
+    <ui:VisualElement name="MainMenuBg" style="flex-grow: 1; justify-content: flex-end; background-image: url(&quot;project://database/Assets/TestSprites/BG/main_screen.jpg?fileID=2800000&amp;guid=6b6f66165c6ba3b4389a8774d39fa2e9&amp;type=3#main_screen&quot;);">
+        <ui:VisualElement name="MainMenu" style="flex-grow: 1; justify-content: flex-end;">
+            <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; align-items: center; justify-content: space-between; align-self: flex-end; width: 45%; height: 48%;">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 33%;">
+                    <ui:Button text="Продолжить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ContinueBtn" class="MainMenuBtns" />
+                    <ui:Button text="Новая Игра" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameBtn" class="MainMenuBtns" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 33%;">
+                    <ui:Button text="Сохранения" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SavesBtn" class="MainMenuBtns" />
+                    <ui:Button text="Настройки" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBtn" class="MainMenuBtns" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: space-around; width: 100%; height: 33%;">
+                    <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" class="MainMenuBtns" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="SettingsMenu" style="flex-grow: 1; position: absolute; left: 87px; top: 139px; align-items: center; justify-content: space-around; width: 1767px; height: 915px; background-image: url(&quot;project://database/Assets/TestSprites/Stuff/sound_bar.png?fileID=2800000&amp;guid=65e6aafc5f8a5c043a36afe8092854b8&amp;type=3#sound_bar&quot;); display: none;">
+            <ui:Slider label="Звук" high-value="0" name="SoundSlider" low-value="-80" style="width: 80%; height: 127px; font-size: 80px;" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackBtn" class="MainMenuBtns" style="height: 6%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

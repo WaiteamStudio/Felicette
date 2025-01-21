@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/PauseMenuBtns.uss?fileID=7433441132597879392&amp;guid=d04fe647f44b6cd449a96c9862f66dc2&amp;type=3#PauseMenuBtns" />
+    <ui:VisualElement name="PauseMenu" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.68); display: none;">
+        <ui:VisualElement name="BG" style="flex-grow: 1; align-items: center; justify-content: space-around; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.59);">
+            <ui:Label tabindex="-1" text="Пауза" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 100px; font-size: 85px; color: rgb(255, 255, 255);" />
+            <ui:Button text="Продолжить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UnpauseBtn" class="PauseMenuBtns" />
+            <ui:Button text="Настройки" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBtn" class="PauseMenuBtns" />
+            <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" class="PauseMenuBtns" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SettingsMenu" style="flex-grow: 1; position: absolute; left: 87px; top: 139px; align-items: center; justify-content: space-around; width: 1767px; height: 915px; background-image: url(&quot;project://database/Assets/TestSprites/Stuff/sound_bar.png?fileID=2800000&amp;guid=65e6aafc5f8a5c043a36afe8092854b8&amp;type=3#sound_bar&quot;); display: none;">
+            <ui:Slider label="Звук" high-value="0" name="SoundSlider" low-value="-80" style="font-size: 80px; width: 80%; height: 127px;" />
+            <ui:Button text="Назад" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackBtn" class="PauseMenuBtns" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
