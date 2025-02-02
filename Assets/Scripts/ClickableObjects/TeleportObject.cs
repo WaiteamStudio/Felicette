@@ -1,3 +1,4 @@
+using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] private Transform teleportPoint;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform cameraTarget;
+    [SerializeField] private PlayerMovement player;
+    [Header("Events")]
+    [SerializeField] public GameEvent onTpClickOnce;
+    [SerializeField] public GameEvent offTeleport;
 
     private ICameraController cameraController;
     public Texture2D CursorTexture => cursorTexture;
@@ -24,8 +29,10 @@ public class TeleportObject : MonoBehaviour, ICursor
             var player = playerCollider.GetComponent<IMovement>();
             if (player != null && !PauseMenu.isPaused)
             {
+                onTpClickOnce.Raise(this, 0);
                 player.Teleport(teleportPoint.position);
                 cameraController.FocusOn(cameraTarget);
+                offTeleport.Raise(this, 0);
             }
         }
     }

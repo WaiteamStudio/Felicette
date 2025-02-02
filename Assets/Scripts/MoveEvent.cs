@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
-public class GameEvents : MonoBehaviour
+public class MoveEvent : MonoBehaviour
 {
-    public static GameEvents current;
+    public static MoveEvent current;
 
     private void Awake()
     {
