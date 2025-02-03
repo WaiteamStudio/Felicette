@@ -1,0 +1,83 @@
+.container {
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory {
+    flex-grow: 1;
+    width: 70%;
+    height: 220px;
+    background-color: rgb(28, 32, 36);
+    border-top-color: rgb(255, 197, 0);
+    border-top-width: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.header {
+    flex-grow: 0;
+    font-size: 24px;
+    color: rgb(255, 197, 0);
+    border-bottom-color: rgb(64, 74, 82);
+    border-bottom-width: 1px;
+    margin-bottom: 10px;
+}
+
+.slotsContainer {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    flex-grow: 1;
+    margin-top: 0;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    background-image: none;
+}
+
+.slotContainer {
+    width: 128px;
+    height: 128px;
+    margin: 5px;
+    background-color: rgb(9, 19, 21);
+    display: flex;
+    background-image: url("project://database/Assets/Scripts/Inventory/InventorySystemPackage/UI/Sprites/ItemSlotBackground.png?fileID=21300000&guid=407d18dcf9203d747b3bd070e688a30a&type=3#ItemSlotBackground");
+}
+
+.slotIcon {
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+}
+
+.slotCount {
+    width: 28px;
+    height: 28px;
+    align-self: flex-end;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    right: -7px;
+    bottom: 1px;
+    position: absolute;
+}
+
+.slotContainerSelected {
+    margin: 5px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-left-color: rgba(255, 0, 0, 0.94);
+    border-right-color: rgba(255, 0, 0, 0.94);
+    border-top-color: rgba(255, 0, 0, 0.94);
+    border-bottom-color: rgba(255, 0, 0, 0.94);
+}

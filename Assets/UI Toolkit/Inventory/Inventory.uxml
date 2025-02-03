@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Inventory/Inventory.uss?fileID=7433441132597879392&amp;guid=089c5289aeed7fd46b8b11d5fff24692&amp;type=3#Inventory" />
+    <ui:VisualElement name="Container" class="container" style="align-items: stretch; flex-direction: row;">
+        <ui:VisualElement name="Inventory" class="inventory" style="left: 112px; flex-grow: 0; align-self: flex-start; top: 50px; height: 240px; flex-shrink: 1; width: 80%;">
+            <ui:Label text="Inventory" display-tooltip-when-elided="true" name="Header" class="header" />
+            <ui:VisualElement name="SlotContainer" class="slotsContainer" style="align-items: center; justify-content: center; flex-direction: row; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; flex-shrink: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="GhostIcon" style="visibility: hidden; position: absolute; width: 128px; height: 128px; background-image: none; left: 50px; top: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

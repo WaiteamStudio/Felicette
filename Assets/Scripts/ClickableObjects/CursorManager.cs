@@ -66,6 +66,28 @@ public class CursorManager : MonoBehaviour
                 }
             }
         }
+        //
+        if(Input.GetMouseButtonUp(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
+
+            if (hit.collider != null)
+            {
+                var usableOn = hit.collider.GetComponent<IUsableOn>();
+                if (usableOn != null)
+                {
+                    string selectedItemGUID = ServiceLocator.Current.Get<InventoryUIController>().SelectedItemGUID;
+                    if(selectedItemGUID!= null)
+                    {
+                        ItemDetailsSO itemDetailsSO = ServiceLocator.Current.Get <ItemDataBase>().GetItemByGuid(selectedItemGUID);
+                        usableOn.Use(itemDetailsSO);
+
+                    }
+                }
+            }
+        }
     }
 
     private void SetCursor(Texture2D cursor, Vector2 hotspot)
