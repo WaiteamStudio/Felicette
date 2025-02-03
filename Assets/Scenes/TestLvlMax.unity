@@ -314,6 +314,7 @@ MonoBehaviour:
   items:
   - {fileID: 1469477433}
   - {fileID: 1587481170}
+  - {fileID: 367572063}
 --- !u!1 &367572063
 GameObject:
   m_ObjectHideFlags: 0
