@@ -1,4 +1,5 @@
 using UnityEngine;
+using DialogueEditor;
 
 public class CursorManager : MonoBehaviour
 {
@@ -19,12 +20,12 @@ public class CursorManager : MonoBehaviour
 
     private void Update()
     {
-        if (!PauseMenu.isPaused)
+        if (!PauseMenu.isPaused && !ConversationManager.Instance.IsConversationActive)
         {
             HandleCursorChange();
             HandleInteraction();
         }
-        else if (PauseMenu.isPaused)
+        else //if (PauseMenu.isPaused || ConversationManager.Instance.IsConversationActive)
         {
             SetCursor(defaultCursor, defaultCursorHotspot);
         }

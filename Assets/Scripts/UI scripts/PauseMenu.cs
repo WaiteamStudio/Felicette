@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     private Button exitBtn;
     private Button backBtn;
     private List<Button> menuButtons = new List<Button>();
+    [Header("Events")]
+    [SerializeField] public GameEvent onPauseTrigger;
+    [SerializeField] public GameEvent offPauseTrigger;
 
     public static bool isPaused;
 
@@ -62,13 +65,13 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (!isPaused)
             {
-                ResumeGame();
+                onPauseTrigger.Raise(this, 0);
             }
-            else
+            else if (isPaused)
             {
-                PauseGame();
+                offPauseTrigger.Raise(this, 0);
             }
         }
     }
@@ -119,6 +122,6 @@ public class PauseMenu : MonoBehaviour
 
     private void OnAllButtonsClick(ClickEvent evt) // для допустим звука нажатия на все кнопки
     {
-        Debug.Log("Бииип");
+        UnityEngine.Debug.Log("Бииип");
     }
 }
