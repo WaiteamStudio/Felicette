@@ -718,6 +718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783a8871a95019041a0fbd44fe614edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPauseTrigger: {fileID: 0}
+  offPauseTrigger: {fileID: 0}
 --- !u!224 &496991217 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3900108755196472087, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
@@ -962,6 +964,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  onDialogue: {fileID: 0}
+  offDialogue: {fileID: 0}
 --- !u!61 &693206982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1601,6 +1605,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cameraTarget: {fileID: 56232516}
+  player: {fileID: 0}
+  onTpClickOnce: {fileID: 0}
+  offTeleport: {fileID: 0}
 --- !u!61 &1169936515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2455,6 +2462,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cameraTarget: {fileID: 1826678113}
+  player: {fileID: 0}
+  onTpClickOnce: {fileID: 0}
+  offTeleport: {fileID: 0}
 --- !u!61 &1761227953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2847,6 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a163ee47053eeef469abc154ce167d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onMovementTriggered: {fileID: 11400000, guid: 519e65d80092e624cb9f7e0fefdf4346, type: 2}
 --- !u!114 &1890455779
 MonoBehaviour:
   m_ObjectHideFlags: 0

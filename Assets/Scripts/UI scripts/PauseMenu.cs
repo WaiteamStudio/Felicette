@@ -97,6 +97,7 @@ public class PauseMenu : MonoBehaviour
     private void OnContinueClick(ClickEvent evt)
     {
         Time.timeScale = 1f;
+        offPauseTrigger.Raise(this, 0);
         pauseMenu.style.display = DisplayStyle.None;
         isPaused = false;
     }
