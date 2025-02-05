@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 public class InventoryUIController : IService
 {
+    private const string m_ToggleVisibilityButtonShow = "VisibilityButton-show";
+    private const string m_ToggleVisibilityButtonHide = "VisibilityButton-hide";
+
     public List<InventorySlot> InventorySlots = new();
     public string SelectedItemGUID = "";
     public event Action ItemSelected;
     public event Action NoItemSelected;
     private VisualElement m_Root;
     private VisualElement m_SlotContainer;
+    private VisualElement m_Inventory;
     private VisualElement m_GhostIcon;
+    private Button m_ToggleVisibilityButton;
 
     private bool m_IsDragging;
     private InventorySlot m_OriginalSlot;
@@ -25,7 +31,9 @@ public class InventoryUIController : IService
         _db = itemDataBase;
         m_Root = inventoryRoot;
         m_GhostIcon = m_Root.Query<VisualElement>("GhostIcon");
-
+        m_Inventory = m_Root.Query<VisualElement>("Inventory");
+        m_ToggleVisibilityButton = m_Root.Query<Button>("ToggleVisibilityButton");
+        m_ToggleVisibilityButton.clicked += ToggleVisibilityButton;
         //Search the root for the SlotContainer Visual Element
         m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
 
@@ -36,7 +44,6 @@ public class InventoryUIController : IService
             slot.Init(this);
 
             InventorySlots.Add(slot);
-
             m_SlotContainer.Add(slot);
         }
 
@@ -85,6 +92,10 @@ public class InventoryUIController : IService
     {
         return m_SelectedSlot;
     }
+    public void SetSprite(Sprite sprite)
+    {
+
+    }
     private void UnSelect(InventorySlot LastSelectedSlot)
     {
         if (LastSelectedSlot == null)
@@ -113,7 +124,7 @@ public class InventoryUIController : IService
     /// </summary>
     private void OnPointerMove(PointerMoveEvent evt)
     {
-        //Only take action if the player is dragging an item around the screen
+        //Only take action if the player is dragging an slot around the screen
         if (!m_IsDragging)
         {
             return;
@@ -127,16 +138,10 @@ public class InventoryUIController : IService
     }
 
     /// <summary>
-    /// Finish the drag and compute whether the item should be moved to a new slot
+    /// Finish the drag and compute whether the slot should be moved to a new slot
     /// </summary>
     private void OnPointerUp(PointerUpEvent evt)
     {
-
-        if (!m_IsDragging)
-        {
-            return;
-        }
-
         //Check to see if they are dropping the ghost icon over any inventory slots.
         IEnumerable<InventorySlot> slots = InventorySlots.Where(x => x.worldBound.Overlaps(m_GhostIcon.worldBound));
         Debug.Log(slots.Count() + " slots.Count()");
@@ -146,18 +151,25 @@ public class InventoryUIController : IService
             InventorySlot closestSlot = slots.OrderBy(x => Vector2.Distance(x.worldBound.position, m_GhostIcon.worldBound.position)).First();
             if (closestSlot.IsHoldingItem()) //swap
             {
-                Swap(closestSlot, m_OriginalSlot);
+               ItemDetailsSO originalItem = _db.GetItemByGuid(m_OriginalSlot.ItemGuid);
+               ItemDetailsSO closestlItem = _db.GetItemByGuid(closestSlot.ItemGuid);
+                bool usingResult = originalItem.TryUseOn(closestlItem);
+                if (!usingResult)
+                    Swap(closestSlot, m_OriginalSlot);
+                closestSlot.Show();
+                m_OriginalSlot.Show();
             }
             else
             {
                 Move(m_OriginalSlot, closestSlot);
-
+                closestSlot.Show();
             }
 
         }
         else
         {
-            m_OriginalSlot.Icon.image = _inventoryController.GetItemByGuid(m_OriginalSlot.ItemGuid).Icon.texture;
+            m_OriginalSlot.SetIcon(_inventoryController.GetItemByGuid(m_OriginalSlot.ItemGuid).Icon);
+            m_OriginalSlot.Show();
         }
 
 
@@ -191,7 +203,7 @@ public class InventoryUIController : IService
     /// <param name="change">Type of change that occurred. This could be extended to handle drop logic.</param>
     private void GameController_OnInventoryChanged(InventoryChangeDataContinues data)
     {
-        //Loop through each item and if it has been picked up, add it to the next empty slot
+        //Loop through each slot and if it has been picked up, add it to the next empty slot
         foreach (var item in data.Items)
         {
             ItemDetailsSO  itemDetailsSO = _inventoryController.GetItemByGuid(item.Key);
@@ -218,7 +230,7 @@ public class InventoryUIController : IService
                     emptySlot.HoldItem(itemDetailsSO, _inventoryController.GetItemCount(itemGUID));
                 }
                 else
-                    throw new System.Exception("empty ui slot not found for added inventory item " + itemDetailsSO.name);
+                    throw new System.Exception("empty ui slot not found for added inventory slot " + itemDetailsSO.name);
             }
         }
         else if (data.ChangeType == InventoryChangeType.Drop)
@@ -232,7 +244,7 @@ public class InventoryUIController : IService
                 }
                 else
                 {
-                    m_SelectedSlot.HoldItem(itemDetailsSO,_inventoryController.GetItemCount(itemGUID));
+                    m_SelectedSlot.HoldItem(itemDetailsSO, _inventoryController.GetItemCount(itemGUID));
                 }
             }
             else
@@ -240,5 +252,50 @@ public class InventoryUIController : IService
                 throw new System.NotImplementedException();
             }
         }
+    }
+    private bool IsInventoryVisible()
+    {
+        return m_Inventory.style.visibility == Visibility.Visible;
+    }
+    private void ToggleVisibilityButton()
+    {
+        Debug.Log("click!");
+        bool state = IsInventoryVisible();
+        if (state)
+        {
+            m_Inventory.style.visibility = Visibility.Hidden;
+            m_ToggleVisibilityButton.RemoveFromClassList(m_ToggleVisibilityButtonHide);
+            m_ToggleVisibilityButton.AddToClassList(m_ToggleVisibilityButtonShow);
+            //HideIcons();
+        }
+        else
+        {
+            m_Inventory.style.visibility = Visibility.Visible;
+            m_ToggleVisibilityButton.RemoveFromClassList(m_ToggleVisibilityButtonShow);
+            m_ToggleVisibilityButton.AddToClassList(m_ToggleVisibilityButtonHide);
+            //ShowIcons();
+        }
+    }
+    private async void HideIcons()
+    {
+        foreach (var slot in InventorySlots)
+        {
+            Debug.Log((slot.parent == m_SlotContainer).ToString() + " parented of m_Inventory ; m_Inventory visibility: " + (m_Inventory.style.visibility == Visibility.Visible)); ;
+            slot.Hide();
+           //await ShowIconsAsync();
+        }
+    }
+    private void ShowIcons()
+    {
+        foreach (var slot in InventorySlots)
+        {
+            Debug.Log((slot.parent == m_SlotContainer).ToString() + " parented of m_Inventory ; m_Inventory visibility: " + (m_Inventory.style.visibility == Visibility.Visible)); ;
+            slot.Show();
+        }
+    }
+    private async Task ShowIconsAsync()
+    {
+        await Task.Delay(2000);
+        ShowIcons();
     }
 }

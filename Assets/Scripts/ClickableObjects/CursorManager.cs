@@ -22,8 +22,9 @@ public class CursorManager : MonoBehaviour
     {
         if (!PauseMenu.isPaused && !ConversationManager.Instance.IsConversationActive)
         {
-            HandleCursorChange();
-            HandleInteraction();
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            HandleCursorChange(mousePosition);
+            HandleInteraction(mousePosition);
         }
         else //if (PauseMenu.isPaused || ConversationManager.Instance.IsConversationActive)
         {
@@ -31,10 +32,10 @@ public class CursorManager : MonoBehaviour
         }
     }
 
-    private void HandleCursorChange()
+    private void HandleCursorChange(Vector2 mousePosition)
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        //if (UIBlocker.IsPointerOverUI(mousePosition))
+        //    return;
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
 
         if (hit.collider != null)
@@ -50,47 +51,56 @@ public class CursorManager : MonoBehaviour
         SetCursor(defaultCursor, defaultCursorHotspot);
     }
 
-    private void HandleInteraction()
+    private void HandleInteraction(Vector2 mousePosition)
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
-
-            if (hit.collider != null)
-            {
-                var interactable = hit.collider.GetComponent<ICursor>();
-                if (interactable != null)
-                {
-                    interactable.Interact();
-                }
-            }
+            OnMouseButtonDown(mousePosition);
         }
-        //
-        if(Input.GetMouseButtonUp(0))
+        //кнопка 
+        if (Input.GetMouseButtonUp(0))
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            OnMouseButtonUp(mousePosition);
+        }
+    }
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
+    private void OnMouseButtonUp(Vector2 mousePosition)
+    {
+        //if (UIBlocker.IsPointerOverUI(mousePosition))
+        //    return;
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
 
-            if (hit.collider != null)
+        if (hit.collider != null)
+        {
+            var usableOn = hit.collider.GetComponent<IUsableOn>();
+            if (usableOn != null)
             {
-                var usableOn = hit.collider.GetComponent<IUsableOn>();
-                if (usableOn != null)
+                string selectedItemGUID = ServiceLocator.Current.Get<InventoryUIController>().SelectedItemGUID;
+                if (selectedItemGUID != null)
                 {
-                    string selectedItemGUID = ServiceLocator.Current.Get<InventoryUIController>().SelectedItemGUID;
-                    if(selectedItemGUID!= null)
-                    {
-                        ItemDetailsSO itemDetailsSO = ServiceLocator.Current.Get <ItemDataBase>().GetItemByGuid(selectedItemGUID);
-                        usableOn.Use(itemDetailsSO);
+                    ItemDetailsSO itemDetailsSO = ServiceLocator.Current.Get<ItemDataBase>().GetItemByGuid(selectedItemGUID);
+                    usableOn.Use(itemDetailsSO);
 
-                    }
                 }
             }
         }
     }
 
+    private void OnMouseButtonDown(Vector2 mousePosition)
+    {
+        //if (UIBlocker.IsPointerOverUI(mousePosition))
+        //    return;
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
+
+        if (hit.collider != null)
+        {
+            var interactable = hit.collider.GetComponent<ICursor>();
+            if (interactable != null)
+            {
+                interactable.Interact();
+            }
+        }
+    }
     private void SetCursor(Texture2D cursor, Vector2 hotspot)
     {
         if (currentCursor != cursor)

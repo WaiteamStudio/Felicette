@@ -16,4 +16,6 @@ MonoBehaviour:
   GUID: c0973144-f47d-49ab-be0c-449a226c9bb6
   Icon: {fileID: 21300000, guid: ace770b55adb8db4bac4a9193463ec0e, type: 3}
   CanDrop: 0
-  UsableItems: []
+  CanBeUsedOn:
+  - {fileID: 11400000, guid: d898f4cfbb5fafa4e9d3b4bb30f4a8ac, type: 2}
+  Result: {fileID: 11400000, guid: f8fa20cf0b39789498a8f0e68772cec4, type: 2}

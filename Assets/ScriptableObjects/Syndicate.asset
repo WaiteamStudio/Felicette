@@ -16,6 +16,5 @@ MonoBehaviour:
   GUID: 0162e6d0-049e-4683-aebb-de7fd2d40cb4
   Icon: {fileID: 21300000, guid: 20e361d6c56e95a42b6e97822ed31d93, type: 3}
   CanDrop: 0
-  UsableItems:
-  - {fileID: 11400000, guid: 5d7b74c7e2461f1499cc89c7b39de4c1, type: 2}
-  Result: {fileID: 11400000, guid: f8fa20cf0b39789498a8f0e68772cec4, type: 2}
+  UsableItems: []
+  Result: {fileID: 0}

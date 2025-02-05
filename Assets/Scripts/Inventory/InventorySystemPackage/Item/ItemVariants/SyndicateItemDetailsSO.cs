@@ -20,6 +20,6 @@ public class SyndicateItemDetailsSO : ItemDetailsSO
     }
     private void Use(PotionItemDetailsSO potionItemDetailsSO)
     {
-        throw new NotImplementedException();
+       
     }
 }

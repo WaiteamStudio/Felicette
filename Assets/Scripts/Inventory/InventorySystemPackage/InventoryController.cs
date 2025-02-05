@@ -39,7 +39,7 @@ public class InventoryController : MonoBehaviour, IService
     }
     public int GetItemCount(string guid)
     {
-        ItemDetailsSO itemDetails = _db.GetItemByGuid(guid);
+        ItemDetailsSO itemDetails = DB.GetItemByGuid(guid);
         if (m_PlayerInventory.Keys.Contains(itemDetails))
         {
             return m_PlayerInventory[itemDetails];
@@ -64,7 +64,7 @@ public class InventoryController : MonoBehaviour, IService
     public bool TryAddDefaultItemsToInventory()
     {
         Dictionary<ItemDetailsSO, int> items = new();
-        foreach (var itemDetails in _db.DB)
+        foreach (var itemDetails in DB.Items)
         {
             items.Add(itemDetails.Value, 1);
         }
@@ -72,7 +72,7 @@ public class InventoryController : MonoBehaviour, IService
     }
     public bool TryAddDebugItem()
     {
-        ItemDetailsSO itemDetails = _db.DB.First().Value;
+        ItemDetailsSO itemDetails = DB.Items.First().Value;
         return TryAddItem(itemDetails);
     }
     public bool TryAddItems(Dictionary<ItemDetailsSO, int> items)

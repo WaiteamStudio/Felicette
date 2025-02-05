@@ -11,6 +11,7 @@ public class InventoryUIMonobeh : MonoBehaviour, IService
         document = GetComponent<UIDocument>();
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         InventoryUIController inventoryUIController = ServiceLocator.Current.Get<InventoryUIController>();
-        inventoryUIController.Setup(document.rootVisualElement, inventoryController, ServiceLocator.Current.Get<ItemDataBase>());
+        ItemDataBase itemDB = ServiceLocator.Current.Get<ItemDataBase>();
+        inventoryUIController.Setup(document.rootVisualElement, inventoryController, itemDB);
     }
 }

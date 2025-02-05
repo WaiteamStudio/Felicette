@@ -10,7 +10,6 @@ public class PoisonItemDetailsSO : ItemDetailsSO
 
     public override bool TryUseOn(ItemDetailsSO inventoryItemSO)
     {
-        throw new NotImplementedException();
         return false;
     }
 }

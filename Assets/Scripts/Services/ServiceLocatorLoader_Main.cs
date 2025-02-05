@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
 
-namespace Examples.VerticalScrollerExample
-{
     /// <summary>
     /// Загрузчик сервисов для сцены с игрой
     /// </summary>
@@ -49,4 +47,3 @@ namespace Examples.VerticalScrollerExample
             _dataSaver.Init(_inventoryController, _saveSystem);
         }
     }
-}

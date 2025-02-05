@@ -30,8 +30,8 @@ public class PotionItemDetailsSO : ItemDetailsSO
     protected override void UseOn(ItemDetailsSO syndicateItemDetailsSO)
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
-        inventoryController.TryRemoveItem(this);
-        inventoryController.TryAddItem(Result);
+        bool resultRemoving =  inventoryController.TryRemoveItem(this);
+        bool resultAdding =  inventoryController.TryAddItem(Result);
         Debug.Log("Succeful used " + this + " on " + syndicateItemDetailsSO);
     }
 }
