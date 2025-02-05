@@ -214,45 +214,56 @@ public class InventoryUIController : IService
     {
         string itemGUID = data.ItemGUID;
         ItemDetailsSO itemDetailsSO = data.Item;
+        int newAmount = _inventoryController.GetItemCount(itemGUID);
+        InventorySlot slot = InventorySlots.FirstOrDefault(x => x.GetGuid() == itemGUID);
         if (data.ChangeType == InventoryChangeType.Pickup)
         {
-            InventorySlot slot = InventorySlots.FirstOrDefault(x => x.GetGuid() == itemGUID);
-            if (slot != null)
-            {
-                slot.HoldItem(itemDetailsSO, _inventoryController.GetItemCount(itemGUID));
-                return;
-            }
-            else
-            {
-                InventorySlot emptySlot = InventorySlots.FirstOrDefault(x => x.GetGuid() == "");
-                if (emptySlot != null)
-                {
-                    emptySlot.HoldItem(itemDetailsSO, _inventoryController.GetItemCount(itemGUID));
-                }
-                else
-                    throw new System.Exception("empty ui slot not found for added inventory slot " + itemDetailsSO.name);
-            }
+            OnPickup(itemDetailsSO, newAmount, slot);
         }
         else if (data.ChangeType == InventoryChangeType.Drop)
         {
-            if (m_SelectedSlot.ItemGuid == itemGUID)
-            {
-                if (data.Amount == 0)
-                {
-                    m_SelectedSlot.DropItem();
-                    UnSelect(m_SelectedSlot);
-                }
-                else
-                {
-                    m_SelectedSlot.HoldItem(itemDetailsSO, _inventoryController.GetItemCount(itemGUID));
-                }
-            }
-            else
-            {
-                throw new System.NotImplementedException();
-            }
+            //slot = m_SelectedSlot;
+            OnDrop(itemDetailsSO, newAmount, slot);
         }
     }
+
+    private void OnDrop(ItemDetailsSO itemDetailsSO, int newAmount, InventorySlot slot)
+    {
+        if (slot == null)
+        {
+            Debug.LogError("removed item not found!");
+            return;
+        }
+        if (newAmount == 0)
+        {
+            slot.DropItem();
+            UnSelect(slot);
+        }
+        else
+        {
+            slot.HoldItem(itemDetailsSO, newAmount);
+        }
+    }
+
+    private void OnPickup(ItemDetailsSO itemDetailsSO, int newAmount, InventorySlot slot)
+    {
+        if (slot != null)
+        {
+            slot.HoldItem(itemDetailsSO, newAmount);
+            return;
+        }
+        else
+        {
+            InventorySlot emptySlot = InventorySlots.FirstOrDefault(x => x.GetGuid() == "");
+            if (emptySlot != null)
+            {
+                emptySlot.HoldItem(itemDetailsSO, newAmount);
+            }
+            else
+                throw new System.Exception("empty ui slot not found for added inventory slot " + itemDetailsSO.name);
+        }
+    }
+
     private bool IsInventoryVisible()
     {
         return m_Inventory.style.visibility == Visibility.Visible;

@@ -20,8 +20,8 @@ public class PotionItemDetailsSO : ItemDetailsSO
        
         if (!inventoryController.HaveSpace(Result))
         {
-            Debug.LogError("no empty slot appeared after removing items!!!");
-            inventoryController.TryAddItem(this);
+            //Debug.LogError("no empty slot appeared after removing items!!!");
+            //inventoryController.TryAddItem(this);
             return false;
         }
         UseOn(inventoryItemSO);
