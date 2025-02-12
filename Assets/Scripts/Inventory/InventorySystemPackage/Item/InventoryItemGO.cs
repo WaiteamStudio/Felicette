@@ -9,6 +9,8 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
 {
     [SerializeField]
     private ItemDetailsSO _inventoryItemSO;
+    [SerializeField] 
+    private LayerMask playerLayer;
     public ItemDetailsSO InventoryItemSO => _inventoryItemSO;
     [HideInInspector]
     public UnityEvent<ItemDetailsSO> CollectStart;
@@ -41,7 +43,16 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
     }
     public void Interact()
     {
-        Collect();
+        //Collect();
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 2f, playerLayer);
+        if (playerCollider != null)
+        {
+            var player = playerCollider.GetComponent<IMovement>();
+            if (player != null && !PauseMenu.isPaused)
+            {
+                Collect();
+            }
+        }
     }
 
     public bool Use(ItemDetailsSO itemDetailsSO)

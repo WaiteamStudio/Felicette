@@ -1,0 +1,16 @@
+Slider Label {
+}
+
+Slider VisualElement {
+}
+
+Slider VisualElement #unity-drag-container #unity-tracker {
+    background-image: url("project://database/Assets/TestSprites/Stuff/soundbar.png?fileID=2800000&guid=8f0ad597ff31a9b4cb29cb20293e6040&type=3#soundbar");
+}
+
+Slider VisualElement #unity-drag-container #unity-dragger {
+    background-image: url("project://database/Assets/TestSprites/Stuff/slider.png?fileID=2800000&guid=78970990fc20de141971c69a1bececd4&type=3#slider");
+    background-color: rgba(0, 0, 0, 0);
+    width: 30px;
+    height: 30px;
+}

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private AudioSource soundClip;
     private VisualElement pauseMenu;
     private VisualElement bgMenu;
     private VisualElement settingsMenu;
@@ -85,6 +87,18 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void InventoryPause()
+    {
+        Time.timeScale = 0f;
+        //isPaused = true;
+    }
+
+    public void InventoryUnpause()
+    {
+        Time.timeScale = 1f;
+        //isPaused = false;
+    }
+
     public void ResumeGame()
     {
         Time.timeScale = 1f;
@@ -124,5 +138,6 @@ public class PauseMenu : MonoBehaviour
     private void OnAllButtonsClick(ClickEvent evt) // для допустим звука нажатия на все кнопки
     {
         UnityEngine.Debug.Log("Бииип");
+        soundClip.Play();
     }
 }

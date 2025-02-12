@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuEvents : MonoBehaviour
 {
+    [SerializeField] private AudioSource soundClip;
     private VisualElement mainMenu;
     private VisualElement settingsMenu;
     private UIDocument document;
@@ -64,7 +65,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnContinueClick(ClickEvent evt)
     {
-        SceneManager.LoadScene("TestLvlMax");
+        SceneManager.LoadScene("ToShow");
     }
 
     private void OnNewGameClick(ClickEvent evt)
@@ -86,6 +87,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnExitClick(ClickEvent evt)
     {
         Debug.Log("OnExitClick");
+        Application.Quit();
     }
 
     private void OnBackClick(ClickEvent evt)
@@ -97,5 +99,6 @@ public class MainMenuEvents : MonoBehaviour
     private void OnAllButtonsClick(ClickEvent evt) // для допустим звука нажатия на все кнопки
     {
         Debug.Log("Бииип");
+        soundClip.Play();
     }
 }

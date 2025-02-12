@@ -9,6 +9,9 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private PlayerMovement player;
+    [SerializeField] private PerspectiveAdjuster perspectiveAdjuster;
+    [SerializeField] private float perspectiveScaleToChange;
+    [SerializeField] private float scaleRatioToChange;
     [Header("Events")]
     [SerializeField] public GameEvent onTpClickOnce;
     [SerializeField] public GameEvent offTeleport;
@@ -32,8 +35,18 @@ public class TeleportObject : MonoBehaviour, ICursor
                 onTpClickOnce.Raise(this, 0);
                 player.Teleport(teleportPoint.position);
                 cameraController.FocusOn(cameraTarget);
+                ChangePerspectiveScale();
                 offTeleport.Raise(this, 0);
             }
+        }
+    }
+
+    public void ChangePerspectiveScale()
+    {
+        if (perspectiveAdjuster != null)
+        {
+            perspectiveAdjuster.ChangePerspectiveScale(perspectiveScaleToChange);
+            perspectiveAdjuster.ChangeScaleRatio(scaleRatioToChange);
         }
     }
 }

@@ -13,14 +13,17 @@
     flex-grow: 1;
     width: 70%;
     height: 220px;
-    background-color: rgb(28, 32, 36);
+    background-color: rgba(28, 32, 36, 0);
     border-top-color: rgb(255, 197, 0);
-    border-top-width: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-top-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     align-items: center;
+    display: flex;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/TestSprites/Stuff/2.png?fileID=2800000&guid=e3cf7b89003f73d469c21698f9af6397&type=3#2");
 }
 
 .header {
@@ -40,16 +43,22 @@
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;
-    background-image: none;
+    background-image: url("project://database/Assets/TestSprites/Stuff/3.png?fileID=21300000&guid=88a46311df503c842a52b9de492295de&type=3#3");
 }
 
 .slotContainer {
     width: 128px;
     height: 128px;
     margin: 5px;
-    background-color: rgb(9, 19, 21);
+    background-color: rgba(9, 19, 21, 0);
     display: flex;
-    background-image: url("project://database/Assets/Scripts/Inventory/InventorySystemPackage/UI/Sprites/ItemSlotBackground.png?fileID=21300000&guid=407d18dcf9203d747b3bd070e688a30a&type=3#ItemSlotBackground");
+    background-image: url("project://database/Assets/TestSprites/Stuff/3.png?fileID=21300000&guid=88a46311df503c842a52b9de492295de&type=3#3");
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    position: relative;
+    top: -17px;
 }
 
 .slotIcon {
@@ -86,22 +95,29 @@
 
 .slotContainerSelected {
     margin: 5px;
-    border-top-width: 3px;
-    border-right-width: 3px;
-    border-bottom-width: 3px;
-    border-left-width: 3px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
     border-left-color: rgba(255, 0, 0, 0.94);
     border-right-color: rgba(255, 0, 0, 0.94);
     border-top-color: rgba(255, 0, 0, 0.94);
     border-bottom-color: rgba(255, 0, 0, 0.94);
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    top: -17px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }
 
 .VisibilityButton-show {
     margin: 5px;
-    background-image: url("project://database/Assets/Sprites/Arrow_backwards.png?fileID=21300000&guid=04ff22ec1d4508947b8ba2930f819a6d&type=3#Arrow_backwards");
+    background-image: url("project://database/Assets/TestSprites/Sprites/Arrow_backwards.png?fileID=21300000&guid=04ff22ec1d4508947b8ba2930f819a6d&type=3#Arrow_backwards");
 }
 
 .VisibilityButton-hide {
     margin: 5px;
-    background-image: url("project://database/Assets/Sprites/Arrow.png?fileID=21300000&guid=14794631bc592774ea65aba02a89ffd0&type=3#Arrow");
+    background-image: url("project://database/Assets/TestSprites/Sprites/Arrow.png?fileID=21300000&guid=14794631bc592774ea65aba02a89ffd0&type=3#Arrow");
 }

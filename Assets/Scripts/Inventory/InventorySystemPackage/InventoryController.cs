@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Windows;
-using static UnityEditor.Progress;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public enum InventoryChangeType
 {
@@ -28,6 +25,7 @@ public class InventoryController : MonoBehaviour, IService
     [SerializeField]
     public bool OpenOnStart;
     private ItemDataBase _db;
+
     public ItemDataBase DB
     {
         get
@@ -37,6 +35,7 @@ public class InventoryController : MonoBehaviour, IService
             return _db;
         }
     }
+
     public int GetItemCount(string guid)
     {
         ItemDetailsSO itemDetails = DB.GetItemByGuid(guid);

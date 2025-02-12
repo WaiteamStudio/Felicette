@@ -24,7 +24,7 @@ public class InventorySlot : VisualElement
     public InventorySlot()
     {
         CountLabel = new Label();
-        Add(CountLabel);
+        //Add(CountLabel); //вырубил так как нам это не надо
         CountLabel.text = _labelText;
 
         Icon = new VisualElement();
