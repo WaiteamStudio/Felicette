@@ -68,15 +68,14 @@ public class CursorManager : MonoBehaviour
     {
         //if (UIBlocker.IsPointerOverUI(mousePosition))
         //    return;
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
-
-        if (hit.collider != null)
+        string selectedItemGUID = ServiceLocator.Current.Get<InventoryUIController>().SelectedItemGUID;
+        if (!string.IsNullOrEmpty(selectedItemGUID))
         {
-            var usableOn = hit.collider.GetComponent<IUsableOn>();
-            if (usableOn != null)
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
+            if (hit.collider != null)
             {
-                string selectedItemGUID = ServiceLocator.Current.Get<InventoryUIController>().SelectedItemGUID;
-                if (selectedItemGUID != null)
+                var usableOn = hit.collider.GetComponent<IUsableOn>();
+                if (usableOn != null)
                 {
                     ItemDetailsSO itemDetailsSO = ServiceLocator.Current.Get<ItemDataBase>().GetItemByGuid(selectedItemGUID);
                     usableOn.Use(itemDetailsSO);

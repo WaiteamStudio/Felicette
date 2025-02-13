@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 public class InventoryUIController : IService
@@ -19,6 +20,8 @@ public class InventoryUIController : IService
     private VisualElement m_GhostIcon;
     private Button m_ToggleVisibilityButton;
 
+    public Action DraggingStarted;
+    public Action DraggingEnded;
     private bool m_IsDragging;
     private InventorySlot m_OriginalSlot;
     private InventorySlot m_SelectedSlot;
@@ -86,7 +89,11 @@ public class InventoryUIController : IService
 
         //Flip the visibility on
         m_GhostIcon.style.visibility = Visibility.Visible;
-
+        DraggingStarted.Invoke();
+    }
+    public bool IsHoldingItem()
+    {
+        return m_IsDragging;
     }
     public InventorySlot GetSelectedSlot()
     {
@@ -177,6 +184,7 @@ public class InventoryUIController : IService
         m_IsDragging = false;
         m_OriginalSlot = null;
         m_GhostIcon.style.visibility = Visibility.Hidden;
+        DraggingEnded.Invoke();
     }
 
     private void Move(InventorySlot from, InventorySlot to)
