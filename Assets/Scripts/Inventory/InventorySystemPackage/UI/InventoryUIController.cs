@@ -58,7 +58,7 @@ public class InventoryUIController : IService
             ChangeType = InventoryChangeType.Pickup
         };
         GameController_OnInventoryChanged(data);
-        m_GhostIcon.RegisterCallback<PointerMoveEvent>(OnPointerMove);
+        inventoryRoot.RegisterCallback<PointerMoveEvent>(OnPointerMove);
         m_GhostIcon.RegisterCallback<PointerUpEvent>(OnPointerUp);
         if (inventoryController.OpenOnStart)
             m_Root.style.visibility = Visibility.Visible;

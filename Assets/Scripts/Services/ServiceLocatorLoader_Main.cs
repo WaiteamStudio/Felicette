@@ -14,7 +14,7 @@ using UnityEngine;
         [SerializeField] private GameAssets _gameAssets;
         [SerializeField] private InventoryUIController _inventoryUIController;
         [SerializeField] private InventoryController _inventoryController;
-        [SerializeField] private InventoryUIMonobeh _inventoryUIMonobeh;
+        [SerializeField] private InventoryUIControllerMonobeh _inventoryUIMonobeh;
         [SerializeField] private ItemDataBase _itemDataBase;
         private void Awake()
         {

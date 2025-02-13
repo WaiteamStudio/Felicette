@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InventoryUIMonobeh : MonoBehaviour, IService
+public class InventoryUIControllerMonobeh : MonoBehaviour, IService
 {
     UIDocument document;
     ItemDataBase _itemDataBase;
