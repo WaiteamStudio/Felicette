@@ -42,21 +42,27 @@ public class SoundManager : IService
             return gameAssets;
         }
     }
-
-    public void PlaySoundInPosition(Sound sound, Vector3 position) {
-        if (CanPlaySound(sound)) {
+    public void PlayUniqueSoundInPosition(Sound sound, Vector3 position)
+    {
+        AudioSource audioSource = CreateSourceForSound(sound);
+        PlaySoundInPosition(sound, audioSource, position);
+        Object.Destroy(audioSource.gameObject, audioSource.clip.length);
+    }
+    public void PlaySoundInPosition(Sound sound, Vector3 position) 
+    {
+        if (CanPlaySound(sound))
+        {
             if (!soundSourcesDictionary.ContainsKey(sound))
             {
-                CreateSourceForSound(sound);
+                AudioSource audioSource = CreateSourceForSound(sound);
+                AddToDictionary(sound, audioSource);
             }
             PlaySoundInPosition(sound, soundSourcesDictionary[sound], position);
-            //Object.Destroy(soundGameObject, audioSource.clip.length);
         }
-        else
-            SetAudioSourcePosition(oneShotAudioSource, position);
+        else 
+            SetAudioSourcePosition(soundSourcesDictionary[sound], position);
     }
-
-    private void CreateSourceForSound(Sound sound)
+    private AudioSource CreateSourceForSound(Sound sound)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
@@ -66,6 +72,11 @@ public class SoundManager : IService
         audioSource.spatialBlend = 1f;
         audioSource.rolloffMode = AudioRolloffMode.Linear;
         audioSource.dopplerLevel = 0f;
+        return audioSource;
+    }
+
+    private void AddToDictionary(Sound sound, AudioSource audioSource)
+    {
         soundSourcesDictionary[sound] = audioSource;
     }
 
