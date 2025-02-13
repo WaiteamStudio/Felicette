@@ -843,7 +843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 670799293}
   - component: {fileID: 670799292}
-  - component: {fileID: 670799291}
   - component: {fileID: 670799294}
   m_Layer: 0
   m_Name: Main Camera
@@ -852,14 +851,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &670799291
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670799290}
-  m_Enabled: 1
 --- !u!20 &670799292
 Camera:
   m_ObjectHideFlags: 0
@@ -3096,6 +3087,7 @@ GameObject:
   - component: {fileID: 1890455784}
   - component: {fileID: 1890455783}
   - component: {fileID: 1890455785}
+  - component: {fileID: 1890455786}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -3412,6 +3404,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!81 &1890455786
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890455772}
+  m_Enabled: 1
 --- !u!1 &1922768204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,7 +3727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1c3266fc426740b88e2de27bb409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameAssets: {fileID: 0}
+  _gameAssets: {fileID: 11400000, guid: ae8a455322e321943b58fd1ca3b47462, type: 2}
   _inventoryController: {fileID: 384870282}
   _inventoryUIMonobeh: {fileID: 1414352519}
   _itemDataBase: {fileID: 11400000, guid: 91a0beafb5368e2459c0f511002c5221, type: 2}
