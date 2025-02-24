@@ -17,5 +17,15 @@ public class PerspectiveAdjuster : MonoBehaviour
         scale.y = perspectiveScale * (scaleRatio - transform.position.y);
         transform.localScale = scale;
     }
+
+    public void ChangePerspectiveScale(float newPerspectiveScale)
+    {
+        perspectiveScale = newPerspectiveScale;
+    }
+
+    public void ChangeScaleRatio(float newScaleRatio)
+    {
+        scaleRatio = newScaleRatio;
+    }
 }
 

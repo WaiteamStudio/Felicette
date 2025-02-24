@@ -66,7 +66,7 @@ namespace DialogueEditor
         // Private variables:     
         private NPCConversation CurrentAsset;           // The Conversation scriptable object that is currently being viewed/edited
         public static EditableSpeechNode ConversationRoot { get; private set; }    // The root node of the conversation
-        private List<UINode> uiNodes;                   // List of all UI nodes
+        private List<UINode> uiNodes;                   // Items of all UI nodes
 
         // Selected asset logic
         private NPCConversation currentlySelectedAsset;

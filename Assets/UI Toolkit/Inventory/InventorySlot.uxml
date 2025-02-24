@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Inventory/Inventory.uss?fileID=7433441132597879392&amp;guid=089c5289aeed7fd46b8b11d5fff24692&amp;type=3#Inventory" />
+    <InventorySlot name="slot" label-text="55" class="slotContainerSelected" style="height: 135px; width: 145px; background-image: url(&quot;project://database/Assets/TestSprites/Stuff/3.png?fileID=21300000&amp;guid=88a46311df503c842a52b9de492295de&amp;type=3#3&quot;); background-color: rgba(9, 19, 21, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+</ui:UXML>

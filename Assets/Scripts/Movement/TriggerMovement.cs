@@ -1,16 +1,15 @@
 using UnityEngine;
-using DialogueEditor;
 
 public class TriggerMovement : MonoBehaviour
 {
+    [Header("Events")]
+    public GameEvent onMovementTriggered;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!PauseMenu.isPaused && !ConversationManager.Instance.IsConversationActive)
-            {
-                GameEvents.current.MoveTo();
-            }
+            onMovementTriggered.Raise(this, 0);
         }
     }
 }

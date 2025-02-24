@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private AudioSource soundClip;
     private VisualElement pauseMenu;
     private VisualElement bgMenu;
     private VisualElement settingsMenu;
@@ -14,6 +16,9 @@ public class PauseMenu : MonoBehaviour
     private Button exitBtn;
     private Button backBtn;
     private List<Button> menuButtons = new List<Button>();
+    [Header("Events")]
+    [SerializeField] public GameEvent onPauseTrigger;
+    [SerializeField] public GameEvent offPauseTrigger;
 
     public static bool isPaused;
 
@@ -62,13 +67,13 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (!isPaused)
             {
-                ResumeGame();
+                onPauseTrigger.Raise(this, 0);
             }
-            else
+            else if (isPaused)
             {
-                PauseGame();
+                offPauseTrigger.Raise(this, 0);
             }
         }
     }
@@ -80,6 +85,18 @@ public class PauseMenu : MonoBehaviour
         settingsMenu.style.display = DisplayStyle.None;
         bgMenu.style.display = DisplayStyle.Flex;
         isPaused = true;
+    }
+
+    public void InventoryPause()
+    {
+        Time.timeScale = 0f;
+        //isPaused = true;
+    }
+
+    public void InventoryUnpause()
+    {
+        Time.timeScale = 1f;
+        //isPaused = false;
     }
 
     public void ResumeGame()
@@ -94,6 +111,7 @@ public class PauseMenu : MonoBehaviour
     private void OnContinueClick(ClickEvent evt)
     {
         Time.timeScale = 1f;
+        offPauseTrigger.Raise(this, 0);
         pauseMenu.style.display = DisplayStyle.None;
         isPaused = false;
     }
@@ -119,6 +137,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnAllButtonsClick(ClickEvent evt) // для допустим звука нажатия на все кнопки
     {
-        Debug.Log("Бииип");
+        UnityEngine.Debug.Log("Бииип");
+        soundClip.Play();
     }
 }

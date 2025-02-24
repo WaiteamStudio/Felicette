@@ -13,7 +13,10 @@ public class ObjectHighlighter : MonoBehaviour
         {
             for (int i = 0; i < items.Count; i++)
             {
-                items[i].SetActive(false);
+                if (items[i] != null) 
+                {
+                    items[i].SetActive(false);
+                }
             }
         }
         else
@@ -30,14 +33,20 @@ public class ObjectHighlighter : MonoBehaviour
             {
                 for (int i = 0; i < items.Count; i++)
                 {
-                    items[i].SetActive(true);
+                    if (items[i] != null) // Проверка на null
+                    {
+                        items[i].SetActive(true);
+                    }
                 }
             }
             else
             {
                 for (int i = 0; i < items.Count; i++)
                 {
-                    items[i].SetActive(false);
+                    if (items[i] != null) // Проверка на null
+                    {
+                        items[i].SetActive(false);
+                    }
                 }
             }
         }

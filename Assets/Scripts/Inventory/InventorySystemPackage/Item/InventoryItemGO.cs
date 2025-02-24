@@ -1,0 +1,68 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+
+public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
+{
+    [SerializeField]
+    private ItemDetailsSO _inventoryItemSO;
+    [SerializeField] 
+    private LayerMask playerLayer;
+    public ItemDetailsSO InventoryItemSO => _inventoryItemSO;
+    [HideInInspector]
+    public UnityEvent<ItemDetailsSO> CollectStart;
+    [HideInInspector]
+    public UnityEvent<ItemDetailsSO> CollectEnd;
+    [SerializeField]
+    private Texture2D _cursorTexture;
+    public Texture2D CursorTexture => _cursorTexture;
+    private void Awake()
+    {
+        //ServiceLocator.Current.Get<InventoryItemsFabric>().itemCreated.Invoke(this);
+    }
+    public void OnCollectEnd()
+    {
+
+        CollectEnd?.Invoke(_inventoryItemSO);
+        Debug.Log($"Предмет {_inventoryItemSO.name} собран");
+        Destroy(gameObject);
+    }
+    private void Collect()
+    {
+        if(!ServiceLocator.Current.Get<InventoryController>().TryAddItem(_inventoryItemSO))
+        {
+            Debug.Log("Item did not collected");
+            return;
+        }
+        Debug.Log($"Предмет {_inventoryItemSO.name} начинает собираться");
+        CollectStart.Invoke(_inventoryItemSO);
+        OnCollectEnd();
+    }
+    public void Interact()
+    {
+        //Collect();
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 2f, playerLayer);
+        if (playerCollider != null)
+        {
+            var player = playerCollider.GetComponent<IMovement>();
+            if (player != null && !PauseMenu.isPaused)
+            {
+                Collect();
+            }
+        }
+    }
+
+    public bool Use(ItemDetailsSO itemDetailsSO)
+    {
+        if (itemDetailsSO.TryUseOn(_inventoryItemSO))
+        {
+            Debug.Log("SuccesfullyUsed!");
+            Destroy(gameObject);
+            return true;
+        }
+        return false;
+    }
+}
