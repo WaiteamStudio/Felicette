@@ -90,7 +90,7 @@ public class CursorManager : MonoBehaviour
     {
         //if (UIBlocker.IsPointerOverUI(mousePosition))
         //    return;
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
+/*        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f, interactableLayer);
 
         if (hit.collider != null)
         {
@@ -99,7 +99,7 @@ public class CursorManager : MonoBehaviour
             {
                 interactable.Interact();
             }
-        }
+        }*/
     }
     private void SetCursor(Texture2D cursor, Vector2 hotspot)
     {

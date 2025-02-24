@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DialogueEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMovement
@@ -15,6 +14,18 @@ public class PlayerMovement : MonoBehaviour, IMovement
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+    }
+
+    private void Update()
+    {
+        if (ConversationManager.Instance.IsConversationActive == true)
+        {
+            agent.isStopped = true;
+        }
+        else if (ConversationManager.Instance.IsConversationActive == false)
+        {
+            agent.isStopped = false;
+        }
     }
 
     public void UpdateFollowSpot(Vector2 newSpot)
