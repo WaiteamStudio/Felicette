@@ -7,18 +7,25 @@ using UnityEngine.EventSystems;
 
 public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
 {
-    [SerializeField]
-    private ItemDetailsSO _inventoryItemSO;
-    [SerializeField] 
-    private LayerMask playerLayer;
+
+    [SerializeField] private ItemDetailsSO _inventoryItemSO;
+
+    [SerializeField] private LayerMask playerLayer;
     public ItemDetailsSO InventoryItemSO => _inventoryItemSO;
-    [HideInInspector]
-    public UnityEvent<ItemDetailsSO> CollectStart;
-    [HideInInspector]
-    public UnityEvent<ItemDetailsSO> CollectEnd;
-    [SerializeField]
-    private Texture2D _cursorTexture;
+
+    [HideInInspector] public UnityEvent<ItemDetailsSO> CollectStart;
+
+    [HideInInspector] public UnityEvent<ItemDetailsSO> CollectEnd;
+
+    [SerializeField] private Texture2D _cursorTexture;
     public Texture2D CursorTexture => _cursorTexture;
+    SoundManager _soundManager;
+    SoundManager SoundManager {
+        get {
+            if(_soundManager == null) 
+                _soundManager = ServiceLocator.Current.Get<SoundManager>(); 
+            return _soundManager; }
+    }
     private void Awake()
     {
         //ServiceLocator.Current.Get<InventoryItemsFabric>().itemCreated.Invoke(this);
@@ -38,6 +45,7 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
             return;
         }
         Debug.Log($"Предмет {_inventoryItemSO.name} начинает собираться");
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.ItemCollected,transform.position);
         CollectStart.Invoke(_inventoryItemSO);
         OnCollectEnd();
     }

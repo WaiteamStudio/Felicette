@@ -10,13 +10,12 @@ using UnityEngine;
     {
         private DataManager _dataSaver;
         private SaveSystem _saveSystem;
-        private InventoryUIController _inventoryUIController;
-        [SerializeField]
-        private InventoryController _inventoryController;
-        [SerializeField]
-        private InventoryUIMonobeh _inventoryUIMonobeh;
-        [SerializeField]
-        private ItemDataBase _itemDataBase;
+        private SoundManager _soundManager;
+        [SerializeField] private GameAssets _gameAssets;
+        [SerializeField] private InventoryUIController _inventoryUIController;
+        [SerializeField] private InventoryController _inventoryController;
+        [SerializeField] private InventoryUIControllerMonobeh _inventoryUIMonobeh;
+        [SerializeField] private ItemDataBase _itemDataBase;
         private void Awake()
         {
             Create();
@@ -29,6 +28,7 @@ using UnityEngine;
             _dataSaver = new();
             _saveSystem = new JsonSaveSystem();
             _inventoryUIController = new();
+            _soundManager = new();
         }
 
         private void RegisterServices()
@@ -39,6 +39,8 @@ using UnityEngine;
             ServiceLocator.Current.Register(_dataSaver);
             ServiceLocator.Current.Register(_inventoryUIController);
             ServiceLocator.Current.Register(_inventoryUIMonobeh);
+            ServiceLocator.Current.Register(_soundManager);
+            ServiceLocator.Current.Register(_gameAssets);
 
         }
 
