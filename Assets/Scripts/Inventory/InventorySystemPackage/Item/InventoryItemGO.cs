@@ -39,7 +39,8 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
     }
     private void Collect()
     {
-        if(!ServiceLocator.Current.Get<InventoryController>().TryAddItem(_inventoryItemSO))
+        bool ItemAdded = ServiceLocator.Current.Get<InventoryController>().TryAddItem(_inventoryItemSO);
+        if (!ItemAdded)
         {
             Debug.Log("Item did not collected");
             return;
