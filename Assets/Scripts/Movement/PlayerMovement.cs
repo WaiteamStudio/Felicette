@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DialogueEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMovement
@@ -9,12 +8,26 @@ public class PlayerMovement : MonoBehaviour, IMovement
     private Vector2 followSpot;
     private UnityEngine.AI.NavMeshAgent agent;
 
+    public Vector2 velocity => new Vector2(agent.velocity.x, agent.velocity.y); //Публичное свойство для получения скорости
+
     private void Start()
     {
         followSpot = transform.position;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+    }
+
+    private void Update()
+    {
+        if (ConversationManager.Instance.IsConversationActive == true)
+        {
+            agent.isStopped = true;
+        }
+        else if (ConversationManager.Instance.IsConversationActive == false)
+        {
+            agent.isStopped = false;
+        }
     }
 
     public void UpdateFollowSpot(Vector2 newSpot)
