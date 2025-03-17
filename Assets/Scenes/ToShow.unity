@@ -1555,19 +1555,7 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 3265d805cdaa0d045970fe9cc53e5178, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &365614704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,6 +2298,7 @@ GameObject:
   - component: {fileID: 670799292}
   - component: {fileID: 670799291}
   - component: {fileID: 670799294}
+  - component: {fileID: 670799295}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2403,6 +2392,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8719a741ad9fea54b89b0b710b72d9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &670799295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670799290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d93acd9156c04145ae47ff9488a04c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 184684278}
+  minX: -100
+  maxX: 100
 --- !u!1001 &753451154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2944,8 +2948,6 @@ GameObject:
   - component: {fileID: 1169936512}
   - component: {fileID: 1169936515}
   - component: {fileID: 1169936514}
-  - component: {fileID: 1169936517}
-  - component: {fileID: 1169936516}
   m_Layer: 6
   m_Name: doorToCrimsonOffice
   m_TagString: Untagged
@@ -2989,8 +2991,11 @@ MonoBehaviour:
   perspectiveAdjuster: {fileID: 184684288}
   perspectiveScaleToChange: 0.0099
   scaleRatioToChange: 25
+  isCameraFollow: 0
   onTpClickOnce: {fileID: 11400000, guid: 338b60b14e3ad6442aa18e05f38c81f1, type: 2}
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
+  cameraFollow: {fileID: 11400000, guid: 453a186dc866a9542829a72655e8e3ac, type: 2}
+  unCameraFollow: {fileID: 11400000, guid: ea7bf092db50b4546815da224f95de4c, type: 2}
 --- !u!61 &1169936515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3036,62 +3041,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.9209566, y: 15.383817}
   m_EdgeRadius: 0
---- !u!114 &1169936516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169936511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e9b07b9f6ee72418eb1f4b00697e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 184684285}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &1169936517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169936511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e9b07b9f6ee72418eb1f4b00697e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 338b60b14e3ad6442aa18e05f38c81f1, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 184684285}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1239406732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4155,6 +4104,8 @@ GameObject:
   - component: {fileID: 1761227952}
   - component: {fileID: 1761227955}
   - component: {fileID: 1761227954}
+  - component: {fileID: 1761227957}
+  - component: {fileID: 1761227956}
   m_Layer: 6
   m_Name: doorToCorridor
   m_TagString: Untagged
@@ -4198,8 +4149,11 @@ MonoBehaviour:
   perspectiveAdjuster: {fileID: 184684288}
   perspectiveScaleToChange: 0.058
   scaleRatioToChange: 1
+  isCameraFollow: 0
   onTpClickOnce: {fileID: 11400000, guid: 338b60b14e3ad6442aa18e05f38c81f1, type: 2}
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
+  cameraFollow: {fileID: 11400000, guid: 453a186dc866a9542829a72655e8e3ac, type: 2}
+  unCameraFollow: {fileID: 11400000, guid: ea7bf092db50b4546815da224f95de4c, type: 2}
 --- !u!61 &1761227953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4300,6 +4254,62 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1761227956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761227949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e9b07b9f6ee72418eb1f4b00697e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ea7bf092db50b4546815da224f95de4c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 670799295}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1761227957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761227949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e9b07b9f6ee72418eb1f4b00697e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 453a186dc866a9542829a72655e8e3ac, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 670799295}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1783667220
 GameObject:
