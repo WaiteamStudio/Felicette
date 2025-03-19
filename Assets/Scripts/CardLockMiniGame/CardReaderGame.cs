@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CardReaderGame : MonoBehaviour
@@ -10,7 +11,10 @@ public class CardReaderGame : MonoBehaviour
 
     [Header("Визуальная обратная связь")]
     public GameObject greenLight;
-    public GameObject redLight; 
+    public GameObject redLight;
+
+    [Header("Ивенты")]
+    [SerializeField] public GameEvent miniGameEnd;
 
     private bool isCardInReader = false; 
     private float timeInReader = 0f;  
@@ -49,12 +53,10 @@ public class CardReaderGame : MonoBehaviour
 
             if (isTimeValid && isDirectionValid && isDistanceValid)
             {
-                Debug.Log("Успех! Карточка проведена правильно.");
-                ShowGreenLight();
+                StartCoroutine(HandleSuccessfulCardRead());
             }
             else
             {
-                Debug.Log("Неудача! Слишком быстро, слишком медленно, неправильное направление или недостаточное расстояние.");
                 ShowRedLight();
             }
         }
@@ -104,5 +106,12 @@ public class CardReaderGame : MonoBehaviour
         float distance = Mathf.Abs(entryPos.y - exitPos.y);
 
         return distance >= minDistance;
+    }
+
+    private IEnumerator HandleSuccessfulCardRead()
+    {
+        ShowGreenLight();
+        yield return new WaitForSeconds(1f);
+        miniGameEnd.Raise(this, 0);
     }
 }
