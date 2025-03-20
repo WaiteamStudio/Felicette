@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061fef362c7b1d44fadfcb4798e23d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 8436990640525934900}
+  ScoreText: {fileID: 8582341921664601077}
   AsteroidSpawner: {fileID: 9177972209770961206}
   Crosshair: {fileID: 8748293529853236103}
   _canvas: {fileID: 7611373573484293847}
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7511934255177006242, guid: 5b37b29688060aa4386bdaea1b2fb7a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -452,9 +452,9 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 6432997509161412011, guid: 5b37b29688060aa4386bdaea1b2fb7a0, type: 3}
   m_PrefabInstance: {fileID: 3523959877998889852}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8436990640525934900 stripped
+--- !u!114 &8582341921664601077 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5039994862330595912, guid: 5b37b29688060aa4386bdaea1b2fb7a0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5187307118433747081, guid: 5b37b29688060aa4386bdaea1b2fb7a0, type: 3}
   m_PrefabInstance: {fileID: 3523959877998889852}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

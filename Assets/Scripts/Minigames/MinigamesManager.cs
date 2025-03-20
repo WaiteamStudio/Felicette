@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MinigamesManager : MonoBehaviour, IService
 {
+    private Vector3 previousCameraPos ;
     public enum Minigame
     {
         Weapon,
@@ -21,25 +22,29 @@ public class MinigamesManager : MonoBehaviour, IService
         {
             _currentMinigame = _weaponMinigame;
             //_weaponMinigame.transform.position = Camera.main.transform.position;
-            _weaponMinigame.gameObject.SetActive(true);
-            _weaponMinigame.OnGameEnded += OnGameEnded;
-
+            //_weaponMinigame.gameObject.SetActive(true);
         }
+        _currentMinigame.OnGameEnded += OnGameEnded;
         ServiceLocator.Current.Get<PlayerMovement>().enabled = false;
         ServiceLocator.Current.Get<PlayerController>().enabled = false;
         _currentMinigame.StartGame();
-        Vector2 cameraPos = Camera.main.transform.position;
+        previousCameraPos = Camera.main.transform.position;
         Camera.main.transform.position = _currentMinigame.GetGamePositon();
 
     }
-
+    [ContextMenu("Win")]
+    public void Win()
+    {
+        _currentMinigame.StopGame();
+    }
     private void OnGameEnded()
     {
         if (_currentMinigame != null)
         {
-            _currentMinigame.SetDisabled();
+            //_currentMinigame.SetDisabled();
             _currentMinigame.OnGameEnded -= OnGameEnded;
             _currentMinigame = null;
+            Camera.main.transform.position = previousCameraPos;
             ServiceLocator.Current.Get<PlayerMovement>().enabled = true;
             ServiceLocator.Current.Get<PlayerController>().enabled = true;
         }

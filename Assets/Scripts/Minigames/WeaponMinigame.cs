@@ -23,6 +23,10 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
         }
 
     }
+    public void StopGame()
+    {
+        Win();
+    }
     public Vector3 GetGamePositon()
     {
         return transform.position + new Vector3(0, 0, -1f);
@@ -44,7 +48,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
 
     public void SetDisabled()
     {
-        OnGameEnded?.Invoke();
+        //OnGameEnded?.Invoke();
     }
     private void Fire()
     {
