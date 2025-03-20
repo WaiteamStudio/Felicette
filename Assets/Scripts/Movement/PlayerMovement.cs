@@ -1,7 +1,7 @@
 using DialogueEditor;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IMovement
+public class PlayerMovement : MonoBehaviour, IMovement, IService
 {
     [SerializeField] private float speed;
     private bool isMovementEnabled = true;
