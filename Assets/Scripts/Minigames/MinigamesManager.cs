@@ -20,7 +20,7 @@ public class MinigamesManager : MonoBehaviour, IService
         if (minigame == Minigame.Weapon)
         {
             _currentMinigame = _weaponMinigame;
-            _weaponMinigame.transform.position = Camera.main.transform.position;
+            //_weaponMinigame.transform.position = Camera.main.transform.position;
             _weaponMinigame.gameObject.SetActive(true);
             _weaponMinigame.OnGameEnded += OnGameEnded;
 
@@ -28,6 +28,8 @@ public class MinigamesManager : MonoBehaviour, IService
         ServiceLocator.Current.Get<PlayerMovement>().enabled = false;
         ServiceLocator.Current.Get<PlayerController>().enabled = false;
         _currentMinigame.StartGame();
+        Vector2 cameraPos = Camera.main.transform.position;
+        Camera.main.transform.position = _currentMinigame.GetGamePositon();
 
     }
 

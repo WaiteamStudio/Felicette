@@ -16,6 +16,9 @@ using UnityEngine;
         [SerializeField] private InventoryController _inventoryController;
         [SerializeField] private InventoryUIControllerMonobeh _inventoryUIMonobeh;
         [SerializeField] private ItemDataBase _itemDataBase;
+        [SerializeField] private MinigamesManager _minigamesManager;
+        [SerializeField] private PlayerController _playerController;
+        [SerializeField] private PlayerMovement _playerMovement;
         private void Awake()
         {
             Create();
@@ -41,6 +44,9 @@ using UnityEngine;
             ServiceLocator.Current.Register(_inventoryUIMonobeh);
             ServiceLocator.Current.Register(_soundManager);
             ServiceLocator.Current.Register(_gameAssets);
+            ServiceLocator.Current.Register(_minigamesManager);
+            ServiceLocator.Current.Register(_playerController);
+            ServiceLocator.Current.Register(_playerMovement);
 
         }
 

@@ -23,7 +23,10 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
         }
 
     }
-
+    public Vector3 GetGamePositon()
+    {
+        return transform.position + new Vector3(0, 0, -1f);
+}
     public void AddScore()
     {
         score++;
@@ -33,7 +36,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
 
     public void StartGame()
     {
-        _canvas.enabled = true;
+        _canvas.gameObject.SetActive(true);
         score = 0;
         ScoreText.text = "0";
         StartSpawningAsteroids();
@@ -90,5 +93,4 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     {
         AsteroidSpawner.StartSpawning();
     }
-
 }
