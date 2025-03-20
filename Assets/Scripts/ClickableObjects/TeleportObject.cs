@@ -10,9 +10,12 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] private PerspectiveAdjuster perspectiveAdjuster;
     [SerializeField] private float perspectiveScaleToChange;
     [SerializeField] private float scaleRatioToChange;
+    [SerializeField] private bool isCameraFollow;
     [Header("Events")]
     [SerializeField] public GameEvent onTpClickOnce;
     [SerializeField] public GameEvent offTeleport;
+    [SerializeField] public GameEvent cameraFollow;
+    [SerializeField] public GameEvent unCameraFollow;
 
     private ICameraController cameraController;
     public Texture2D CursorTexture => cursorTexture;
@@ -48,8 +51,17 @@ public class TeleportObject : MonoBehaviour, ICursor
     {
         onTpClickOnce.Raise(this, 0);
         player.Teleport(teleportPoint.position);
-        cameraController.FocusOn(cameraTarget);
         ChangePerspectiveScale();
+        if (isCameraFollow)
+        {
+            cameraFollow.Raise(this, 0);
+            cameraController.FocusOn(cameraTarget);
+        }
+        else if (!isCameraFollow)
+        {
+            unCameraFollow.Raise(this, 0);
+            cameraController.FocusOn(cameraTarget);
+        }
         offTeleport.Raise(this, 0);
 
         /*        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 2f, playerLayer);

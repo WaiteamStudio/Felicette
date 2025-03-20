@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
             ICursor icursor = hit.collider.GetComponent<ICursor>();
             if (icursor != null)
             {
-                movement.UpdateFollowSpot(hit.collider.transform.position);
+                //movement.UpdateFollowSpot(hit.collider.transform.position);
+                movement.UpdateFollowSpot(mousePosition);
                 StartCoroutine(WaitAndInteract(icursor, hit.collider.transform.position));
                 return;
             }
@@ -55,8 +56,16 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WaitAndInteract(ICursor icursor, Vector2 targetPosition)
     {
+        float startTime = Time.time;
+        float timeout = 5f;
+
         while (Mathf.Abs(transform.position.x - targetPosition.x) > 1f) //Vector2.Distance(transform.position, targetPosition) > 3f
         {
+            if (Time.time - startTime > timeout)
+            {
+                yield break; 
+            }
+
             yield return null;
         }
 
