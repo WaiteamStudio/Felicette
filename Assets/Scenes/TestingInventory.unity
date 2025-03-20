@@ -204,6 +204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryItemSO: {fileID: 11400000, guid: d898f4cfbb5fafa4e9d3b4bb30f4a8ac, type: 2}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   CollectStart:
     m_PersistentCalls:
       m_Calls: []
@@ -735,6 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783a8871a95019041a0fbd44fe614edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundClip: {fileID: 0}
   onPauseTrigger: {fileID: 11400000, guid: fe0a1195679cb3a438a48994f3df204c, type: 2}
   offPauseTrigger: {fileID: 11400000, guid: f56e558e1445fa4449f089b48cbbdcd5, type: 2}
 --- !u!114 &481702724
@@ -839,7 +843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 670799293}
   - component: {fileID: 670799292}
-  - component: {fileID: 670799291}
   - component: {fileID: 670799294}
   m_Layer: 0
   m_Name: Main Camera
@@ -848,14 +851,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &670799291
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670799290}
-  m_Enabled: 1
 --- !u!20 &670799292
 Camera:
   m_ObjectHideFlags: 0
@@ -1742,6 +1737,9 @@ MonoBehaviour:
     m_Bits: 64
   cameraTarget: {fileID: 56232516}
   player: {fileID: 1890455780}
+  perspectiveAdjuster: {fileID: 0}
+  perspectiveScaleToChange: 0
+  scaleRatioToChange: 0
   onTpClickOnce: {fileID: 11400000, guid: 338b60b14e3ad6442aa18e05f38c81f1, type: 2}
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
 --- !u!61 &1169936515
@@ -2036,6 +2034,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryItemSO: {fileID: 11400000, guid: f8fa20cf0b39789498a8f0e68772cec4, type: 2}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   CollectStart:
     m_PersistentCalls:
       m_Calls: []
@@ -2764,6 +2765,9 @@ MonoBehaviour:
     m_Bits: 64
   cameraTarget: {fileID: 1826678113}
   player: {fileID: 1890455780}
+  perspectiveAdjuster: {fileID: 0}
+  perspectiveScaleToChange: 0
+  scaleRatioToChange: 0
   onTpClickOnce: {fileID: 11400000, guid: 338b60b14e3ad6442aa18e05f38c81f1, type: 2}
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
 --- !u!61 &1761227953
@@ -3083,6 +3087,7 @@ GameObject:
   - component: {fileID: 1890455784}
   - component: {fileID: 1890455783}
   - component: {fileID: 1890455785}
+  - component: {fileID: 1890455786}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -3399,6 +3404,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!81 &1890455786
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890455772}
+  m_Enabled: 1
 --- !u!1 &1922768204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,6 +3504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryItemSO: {fileID: 11400000, guid: 5d7b74c7e2461f1499cc89c7b39de4c1, type: 2}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   CollectStart:
     m_PersistentCalls:
       m_Calls: []
@@ -3711,6 +3727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1c3266fc426740b88e2de27bb409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameAssets: {fileID: 11400000, guid: ae8a455322e321943b58fd1ca3b47462, type: 2}
   _inventoryController: {fileID: 384870282}
   _inventoryUIMonobeh: {fileID: 1414352519}
   _itemDataBase: {fileID: 11400000, guid: 91a0beafb5368e2459c0f511002c5221, type: 2}

@@ -25,7 +25,7 @@ public class InventoryController : MonoBehaviour, IService
     [SerializeField]
     public bool OpenOnStart;
     private ItemDataBase _db;
-
+    
     public ItemDataBase DB
     {
         get
@@ -35,7 +35,14 @@ public class InventoryController : MonoBehaviour, IService
             return _db;
         }
     }
-
+    [ContextMenu("Clear")]
+    public void Clear()
+    {
+        foreach (var key in m_PlayerInventory.Keys.ToList())
+        {
+            RemoveItem(key);
+        }
+    }
     public int GetItemCount(string guid)
     {
         ItemDetailsSO itemDetails = DB.GetItemByGuid(guid);

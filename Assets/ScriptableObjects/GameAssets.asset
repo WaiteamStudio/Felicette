@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187a18833b810945b38d273a8f314fb, type: 3}
+  m_Name: GameAssets
+  m_EditorClassIdentifier: 
+  soundAudioClipArray:
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: 362da9c03fdc2444dbb2ab387c9b3d94, type: 3}
+  - sound: 11
+    audioClip: {fileID: 8300000, guid: 0991171a32966de4998570aa2872040b, type: 3}
+  audioMixer: {fileID: 24100000, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
+  SoundsAudioMixerGroup: {fileID: 24300002, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
+  MusicAudioMixer: {fileID: -6807021877174762177, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
+  GlobalAudioMixer: {fileID: -1678837101357359823, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
