@@ -2,19 +2,18 @@
 using TMPro;
 using UnityEngine;
 
-public class WeaponMinigame : MonoBehaviour
+public class WeaponMinigame : MonoBehaviour, IMinigame
 {
     [SerializeField]TextMeshProUGUI ScoreText;
-    [SerializeField] AsteroidSpawner AsteroidSpawner;
+    [SerializeField] CanvasAsteroidSpawner AsteroidSpawner;
     [SerializeField] Transform Crosshair;
     private int score = 0;
+    public event Action OnGameEnded;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
-            
-
         }
 
     }
@@ -79,5 +78,9 @@ public class WeaponMinigame : MonoBehaviour
     {
         AsteroidSpawner.StartSpawning();
     }
-    
+
+    public void SetDisabled()
+    {
+        gameObject.SetActive(false);
+    }
 }

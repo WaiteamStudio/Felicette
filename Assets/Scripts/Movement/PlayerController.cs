@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IService
 {
     private IMovement movement;
     private Camera mainCamera;
@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
             HandleClick();
         }
     }
-
     public void Move()
     {
         var mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);

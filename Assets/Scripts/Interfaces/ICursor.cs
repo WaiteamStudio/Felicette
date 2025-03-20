@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface ICursor
 {
-    Texture2D CursorTexture { get; }
+    [SerializeField] Texture2D CursorTexture { get; }
     void Interact();
 }
