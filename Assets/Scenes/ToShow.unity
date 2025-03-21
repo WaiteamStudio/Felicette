@@ -1310,6 +1310,7 @@ GameObject:
   - component: {fileID: 184684285}
   - component: {fileID: 184684280}
   - component: {fileID: 184684279}
+  - component: {fileID: 184684290}
   m_Layer: 3
   m_Name: Felicette
   m_TagString: Player
@@ -1529,6 +1530,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &184684290
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184684276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c50173ac15aae644eafc73f65569b944, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &211822108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,7 +2333,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1414352522}
         m_TargetAssemblyTypeName: InvenoryTriggerMax, Assembly-CSharp
-        m_MethodName: HideUI
+        m_MethodName: ShowUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6687,9 +6709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1c3266fc426740b88e2de27bb409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameAssets: {fileID: 0}
   _inventoryController: {fileID: 384870282}
   _inventoryUIMonobeh: {fileID: 1414352519}
   _itemDataBase: {fileID: 11400000, guid: 91a0beafb5368e2459c0f511002c5221, type: 2}
+  _minigamesManager: {fileID: 0}
+  _playerController: {fileID: 0}
+  _playerMovement: {fileID: 0}
 --- !u!4 &2064213243
 Transform:
   m_ObjectHideFlags: 0
