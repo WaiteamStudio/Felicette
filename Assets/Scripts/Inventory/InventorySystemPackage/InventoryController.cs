@@ -25,7 +25,7 @@ public class InventoryController : MonoBehaviour, IService
     [SerializeField]
     public bool OpenOnStart;
     private ItemDataBase _db;
-    
+    private bool stackableItems = false;
     public ItemDataBase DB
     {
         get
@@ -35,13 +35,19 @@ public class InventoryController : MonoBehaviour, IService
             return _db;
         }
     }
-    [ContextMenu("Clear")]
+    [ContextMenu("ClearInventory")]
     public void Clear()
     {
         foreach (var key in m_PlayerInventory.Keys.ToList())
         {
-            RemoveItem(key);
+            RemoveItem(key, m_PlayerInventory[key]);
         }
+    }
+
+    [ContextMenu("RemoveFirstItem")]
+    public void RemoveFirstItem()
+    {
+        RemoveItem(m_PlayerInventory.Keys.First());
     }
     public int GetItemCount(string guid)
     {
@@ -132,18 +138,17 @@ public class InventoryController : MonoBehaviour, IService
 
     private void AddItem(ItemDetailsSO item, int amount = 1)
     {
-        if (m_PlayerInventory.ContainsKey(item))
-        {
+        Debug.Log("added ietem " + item.Name);
+        if(m_PlayerInventory.ContainsKey(item))
             m_PlayerInventory[item] += amount;
-        }
         else
             m_PlayerInventory.Add(item, amount);
         InventoryChangeData inventoryChangeData = new InventoryChangeData(item, amount, InventoryChangeType.Pickup);
         OnInventoryChanged.Invoke(inventoryChangeData);
     }
-    private bool RemoveItem(ItemDetailsSO item)
+    private bool RemoveItem(ItemDetailsSO item, int count = 1)
     {
-        m_PlayerInventory[item] -= 1;
+        m_PlayerInventory[item] -= count;
         if (m_PlayerInventory[item] == 0)
             m_PlayerInventory.Remove(item);
         InventoryChangeData inventoryChangeData = new InventoryChangeData(item, 1, InventoryChangeType.Drop);

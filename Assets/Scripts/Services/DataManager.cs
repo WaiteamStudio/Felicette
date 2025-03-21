@@ -6,6 +6,9 @@ public class DataManager : IService
     private const string INVENTORYFILE = "PlayerInventory";
     private InventoryController _inventoryController;
     private SaveSystem _saveSystem;
+    bool LoadInventoryOnStart = false;
+    bool AddDefaultItems = true;
+    bool ClearInventoryOnStart = false;
     public void Init(InventoryController inventoryController, SaveSystem saveSystem) 
     {
         _inventoryController = inventoryController;
@@ -15,10 +18,16 @@ public class DataManager : IService
     }
     private void LoadInventoryData()
     {
-        bool InventoryLoadResult = LoadInventory();
-        if (!InventoryLoadResult)
+        bool InventoryLoadResult;
+        if (LoadInventoryOnStart)
+            InventoryLoadResult = LoadInventory();
+        if (AddDefaultItems)
         {
             _inventoryController.TryAddDefaultItemsToInventory();
+        }
+        if(ClearInventoryOnStart)
+        {
+            _inventoryController.Clear();
         }
     }
 

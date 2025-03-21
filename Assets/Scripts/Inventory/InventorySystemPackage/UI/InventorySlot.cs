@@ -83,6 +83,7 @@ public class InventorySlot : VisualElement
             return;
 
         SetIcon(item.Icon);
+        Show();
         _itemGuid = item.GUID;
         CountLabel.text = count == 1 ? "" : count.ToString();
     }

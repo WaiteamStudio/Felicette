@@ -31,7 +31,20 @@ public class PotionItemDetailsSO : ItemDetailsSO
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         bool resultRemoving =  inventoryController.TryRemoveItem(this);
+        if (!resultRemoving)
+        {
+            Debug.Log("error removing");
+            return;
+        }
         bool resultAdding =  inventoryController.TryAddItem(Result);
-        Debug.Log("Succeful used " + this + " on " + syndicateItemDetailsSO);
+        if(!resultAdding)
+        {
+            Debug.Log("error adding");
+            return;
+        }
+        if (resultAdding)
+        {
+            Debug.Log("Succeful used " + this + " on " + syndicateItemDetailsSO);
+        }
     }
 }
