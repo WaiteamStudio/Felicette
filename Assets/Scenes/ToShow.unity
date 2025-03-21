@@ -1420,8 +1420,8 @@ BoxCollider2D:
   m_Offset: {x: -1.0515475, y: 9.113292}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.002442, y: 14}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 10.41, y: 19.39}
     newSize: {x: 10.41, y: 19.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2333,7 +2333,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1414352522}
         m_TargetAssemblyTypeName: InvenoryTriggerMax, Assembly-CSharp
-        m_MethodName: HideUI
+        m_MethodName: ShowUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6709,9 +6709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1c3266fc426740b88e2de27bb409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameAssets: {fileID: 0}
   _inventoryController: {fileID: 384870282}
   _inventoryUIMonobeh: {fileID: 1414352519}
   _itemDataBase: {fileID: 11400000, guid: 91a0beafb5368e2459c0f511002c5221, type: 2}
+  _minigamesManager: {fileID: 0}
+  _playerController: {fileID: 0}
+  _playerMovement: {fileID: 0}
 --- !u!4 &2064213243
 Transform:
   m_ObjectHideFlags: 0

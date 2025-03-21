@@ -19,10 +19,10 @@ public class InvenoryTriggerMax : MonoBehaviour
         rootElement = uiDocument.rootVisualElement;
 
         // Скрыть UI документ
-        HideUI();
+        //HideUI();
     }
 
-    private void Update()
+/*    private void Update()
     {
         if (UnityEngine.Input.GetKeyDown(KeyCode.E))
         {
@@ -40,7 +40,7 @@ public class InvenoryTriggerMax : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     public void HideUI()
     {

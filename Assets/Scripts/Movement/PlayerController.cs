@@ -28,13 +28,23 @@ public class PlayerController : MonoBehaviour, IService
 
     private void HandleClick()
     {
+        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        float inventoryAreaHeight = Screen.height * 0.15f; // 20% высоты экрана
+        float mouseY = Input.mousePosition.y;
+
+        if (mouseY > Screen.height - inventoryAreaHeight)
+        {
+            Debug.Log("Клик в области инвентаря, движение отменено");
+            return;
+        }
+
         if (TeleportObject.IsClickHandled)
         {
             TeleportObject.IsClickHandled = false;
             return;
         }
 
-        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
