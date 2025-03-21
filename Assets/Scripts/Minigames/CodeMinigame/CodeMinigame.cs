@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Minigames.CodeMinigame
 {
-    public class CodeMinigame : MonoBehaviour
+    public class CodeMinigame : MonoBehaviour, IMinigame
     {
         [SerializeField] Button Prefab;
         [SerializeField] Transform Parent;
@@ -18,6 +18,9 @@ namespace Assets.Scripts.Minigames.CodeMinigame
         [SerializeField] private TextMeshProUGUI CodeText; 
         private int buttonCount = 9;
         private string Code = "";
+
+        public event Action OnGameEnded;
+
         public void StartGame()
         {
             SpawnButtons();
@@ -71,11 +74,33 @@ namespace Assets.Scripts.Minigames.CodeMinigame
         private void OnRightCode()
         {
             CodeText.text = "RightCode!";
+            DestroyChildren();
+            OnGameEnded?.Invoke();
         }
 
         private bool IsRightCode()
         {
             return Code == RightCode;
+        }
+
+
+        public void StopGame()
+        {
+            DestroyChildren();
+            gameObject.SetActive(false);
+        }
+
+        private void DestroyChildren()
+        {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        public Vector3 GetGamePositon()
+        {
+            return transform.position;
         }
     }
 }
