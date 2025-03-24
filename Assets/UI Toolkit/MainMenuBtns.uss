@@ -18,6 +18,6 @@
 .MainMenuBtns:hover {
     scale: 1.1 1.1;
     background-color: rgba(225, 130, 74, 0);
-    background-image: url("project://database/Assets/TestSprites/Stuff/pointer.png?fileID=2800000&guid=83bc310a70e2cf248b064808e3268410&type=3#pointer");
+    background-image: url("project://database/Assets/SpritesForTheGame/UI/ingameUI/pointer.png?fileID=2800000&guid=c47d4e10503d0274ebc586f1ee589949&type=3#pointer");
     -unity-background-image-tint-color: rgb(255, 255, 255);
 }

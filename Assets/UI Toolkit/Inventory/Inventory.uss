@@ -23,7 +23,7 @@
     align-items: center;
     display: flex;
     -unity-background-image-tint-color: rgb(255, 255, 255);
-    background-image: url("project://database/Assets/TestSprites/Stuff/2.png?fileID=2800000&guid=e3cf7b89003f73d469c21698f9af6397&type=3#2");
+    background-image: url("project://database/Assets/SpritesForTheGame/UI/ingameUI/2.png?fileID=2800000&guid=201828047331e304995b1eb660598b87&type=3#2");
 }
 
 .header {
@@ -43,7 +43,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;
-    background-image: url("project://database/Assets/TestSprites/Stuff/3.png?fileID=21300000&guid=88a46311df503c842a52b9de492295de&type=3#3");
+    background-image: url("project://database/Assets/SpritesForTheGame/UI/ingameUI/3.png?fileID=21300000&guid=48fea0d2466ca0843b50072583997b82&type=3#3");
 }
 
 .slotContainer {
@@ -52,7 +52,7 @@
     margin: 5px;
     background-color: rgba(9, 19, 21, 0);
     display: flex;
-    background-image: url("project://database/Assets/TestSprites/Stuff/3.png?fileID=21300000&guid=88a46311df503c842a52b9de492295de&type=3#3");
+    background-image: url("project://database/Assets/SpritesForTheGame/UI/ingameUI/3.png?fileID=21300000&guid=48fea0d2466ca0843b50072583997b82&type=3#3");
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -114,10 +114,10 @@
 
 .VisibilityButton-show {
     margin: 5px;
-    background-image: url("project://database/Assets/TestSprites/Sprites/Arrow_backwards.png?fileID=21300000&guid=04ff22ec1d4508947b8ba2930f819a6d&type=3#Arrow_backwards");
+    background-image: url("project://database/Assets/DialogueEditor/Assets/DefaultSprites/Blank.png?fileID=21300000&guid=70e433de46068504fa56fcf7f49b32b1&type=3#Blank");
 }
 
 .VisibilityButton-hide {
     margin: 5px;
-    background-image: url("project://database/Assets/TestSprites/Sprites/Arrow.png?fileID=21300000&guid=14794631bc592774ea65aba02a89ffd0&type=3#Arrow");
+    background-image: url("project://database/Assets/DialogueEditor/Assets/DefaultSprites/Blank.png?fileID=21300000&guid=70e433de46068504fa56fcf7f49b32b1&type=3#Blank");
 }
