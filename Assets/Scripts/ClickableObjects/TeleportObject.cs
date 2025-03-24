@@ -33,6 +33,7 @@ public class TeleportObject : MonoBehaviour, ICursor
     {
         if (!PauseMenu.isPaused && ConversationManager.Instance.IsConversationActive == false)
         {
+            Debug.Log(" ÎËÍ‰");
             if (Time.time - lastClickTime <= doubleClickTime)
             {
                 Interact();
