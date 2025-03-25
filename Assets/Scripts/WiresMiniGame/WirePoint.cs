@@ -1,16 +1,21 @@
 using UnityEngine;
+using System;
 
 public class WirePoint : MonoBehaviour
 {
     [SerializeField] public int wireId;
     [SerializeField] public bool isStartPoint;
     [SerializeField] private GameObject wireSprite;
+    [SerializeField] private GameObject objectToDisable;
+
+    public event Action OnWireConnected;
 
     private bool isDragging = false;
     private Vector2 startPosition;
     private bool isConnected = false;
     private float wireStartScaleY;
     private SpriteRenderer wireSpriteRenderer;
+    private bool wasObjectActive;
 
     private void Start()
     {
@@ -38,6 +43,12 @@ public class WirePoint : MonoBehaviour
         {
             isDragging = true;
             wireSprite.SetActive(true);
+
+            if (objectToDisable != null)
+            {
+                wasObjectActive = objectToDisable.activeSelf;
+                objectToDisable.SetActive(false);
+            }
         }
     }
 
@@ -57,15 +68,16 @@ public class WirePoint : MonoBehaviour
                 {
                     isConnected = true;
                     UpdateWireSprite(startPosition, endPoint.transform.position);
+                    OnWireConnected?.Invoke();
                 }
                 else
                 {
-                    ResetWire();
+                    ResetWireAndObject();
                 }
             }
             else
             {
-                ResetWire();
+                ResetWireAndObject();
             }
         }
     }
@@ -75,7 +87,7 @@ public class WirePoint : MonoBehaviour
         Vector2 direction = end - start;
         float length = direction.magnitude;
 
-        wireSpriteRenderer.size = new Vector2(length * 6 + 5, wireSpriteRenderer.size.y);
+        wireSpriteRenderer.size = new Vector2(length, wireSpriteRenderer.size.y);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         wireSprite.transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -88,5 +100,15 @@ public class WirePoint : MonoBehaviour
         wireSpriteRenderer.size = new Vector2(1, wireSpriteRenderer.size.y);
         wireSprite.transform.rotation = Quaternion.identity;
         wireSprite.SetActive(false);
+    }
+
+    private void ResetWireAndObject()
+    {
+        ResetWire();
+
+        if (objectToDisable != null && !isConnected)
+        {
+            objectToDisable.SetActive(wasObjectActive);
+        }
     }
 }
