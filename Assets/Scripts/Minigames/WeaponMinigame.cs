@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     [SerializeField] AsteroidSpawner AsteroidSpawner;
     [SerializeField] Transform Crosshair;
     [SerializeField] Canvas _canvas;
+    [Header("Events")]
+    [SerializeField] public GameEvent astMiniGameEnd;
     private int score = 0;
 
     public event Action OnGameEnded;
@@ -23,6 +26,18 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
         }
 
     }
+
+    private void Start()
+    {
+        StartCoroutine(OneSecondDelay());
+    }
+
+    IEnumerator OneSecondDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        StartGame();
+    }
+
     public void StopGame()
     {
         Win();
@@ -89,8 +104,15 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     private void Win()
     {
         AsteroidSpawner.StopSpawning(true);
-        _canvas.enabled = false;
+        //_canvas.enabled = false;
         OnGameEnded?.Invoke();
+        StartCoroutine(HandleSuccessfulFinish());
+    }
+
+    private IEnumerator HandleSuccessfulFinish()
+    {
+        yield return new WaitForSeconds(1f);
+        astMiniGameEnd.Raise(this, 0);
     }
 
     private void StartSpawningAsteroids()
