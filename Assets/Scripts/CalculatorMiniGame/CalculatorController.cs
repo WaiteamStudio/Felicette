@@ -7,7 +7,7 @@ public class CalculatorController : MonoBehaviour
     [SerializeField] private int maxCodeLength = 6;
 
     private string currentInput = "";
-    private string secretCode = "123456";
+    private string secretCode = "384467";
 
     void Start()
     {
