@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96755ec0cee7c844a8f6c5208efc24a9, type: 3}
-  m_Name: miniGameEnd
+  m_Name: cardMiniGameEnd
   m_EditorClassIdentifier: 
   listeners: []

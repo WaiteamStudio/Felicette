@@ -11,11 +11,18 @@ public class TelMove : MonoBehaviour
     private Vector2 difference;
     private Vector2 resetCamera;
     public Camera cam;
+    public bool isFinished = false;
 
     public TelTargets target;
     public float dragSpeed = 0.01f;
 
     private bool drag = false;
+
+    // ƒобавленные параметры границ
+    public float minX = -10f;
+    public float maxX = 10f;
+    public float minY = -5f;
+    public float maxY = 5f;
 
 
     public float maxFlashSpeed = 0.01f; // Minimum time between flashes when very close
@@ -25,6 +32,8 @@ public class TelMove : MonoBehaviour
     private Color originalColor;
     private Coroutine flashCoroutine;
 
+    [Header("Events")]
+    [SerializeField] public GameEvent telMiniGameEnd;
 
     void Start()
     {
@@ -79,6 +88,9 @@ public class TelMove : MonoBehaviour
         
         if (drag){
             Vector3 targetPosition = origin - difference;
+            // ѕримен€ем ограничени€ перед установкой позиции
+            targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
             transform.position = Vector2.Lerp(transform.position, targetPosition, dragSpeed);
         }
         if (target)
@@ -105,8 +117,14 @@ public class TelMove : MonoBehaviour
                 }
             }
 
-            if (Vector2.Distance(transform.position, target.transform.position) < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (Vector2.Distance(transform.position, target.transform.position) < 1) StartCoroutine(HandleSuccessfulFinish());
         }
+    }
+
+    private IEnumerator HandleSuccessfulFinish()
+    {
+        yield return new WaitForSeconds(1f);
+        telMiniGameEnd.Raise(this, 0);
     }
 
     private IEnumerator Flash()
