@@ -17,6 +17,8 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] public GameEvent cameraFollow;
     [SerializeField] public GameEvent unCameraFollow;
 
+    public int numbrOfTimesUsed = 0; //счетчик для проверки первого захода в холл и звонка отца
+
     private ICameraController cameraController;
     public Texture2D CursorTexture => cursorTexture;
 
@@ -64,6 +66,7 @@ public class TeleportObject : MonoBehaviour, ICursor
             cameraController.FocusOn(cameraTarget);
         }
         offTeleport.Raise(this, 0);
+        numbrOfTimesUsed++;
 
         /*        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 2f, playerLayer);
                 if (playerCollider != null)

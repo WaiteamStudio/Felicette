@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a961beca29bec547be3e8dcdcbaed7e, type: 3}
-  m_Name: a
+  m_Script: {fileID: 11500000, guid: 96755ec0cee7c844a8f6c5208efc24a9, type: 3}
+  m_Name: DadCall
   m_EditorClassIdentifier: 
-  Name: Poison
-  GUID: 3df88477-7c37-438a-84f9-e446a513ea4c
-  Icon: {fileID: 21300000, guid: 35f6862f4fc24af4f846e95669f84d49, type: 3}
-  CanDrop: 0
-  UsableItems: []
+  listeners: []

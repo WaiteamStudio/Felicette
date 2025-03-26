@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Potion
   GUID: c0973144-f47d-49ab-be0c-449a226c9bb6
-  Icon: {fileID: 21300000, guid: e6df61f23018ff34ba560b673518b190, type: 3}
+  Icon: {fileID: 21300000, guid: ace770b55adb8db4bac4a9193463ec0e, type: 3}
   CanDrop: 0
   CanBeUsedOn:
   - {fileID: 11400000, guid: d898f4cfbb5fafa4e9d3b4bb30f4a8ac, type: 2}

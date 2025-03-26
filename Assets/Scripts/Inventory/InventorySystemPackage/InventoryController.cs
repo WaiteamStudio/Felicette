@@ -26,6 +26,12 @@ public class InventoryController : MonoBehaviour, IService
     public bool OpenOnStart;
     private ItemDataBase _db;
     private bool stackableItems = false;
+
+    private void Start() // max added
+    {
+        Clear();
+    }
+
     public ItemDataBase DB
     {
         get

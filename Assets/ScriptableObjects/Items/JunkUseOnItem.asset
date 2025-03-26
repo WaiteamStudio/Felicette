@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a961beca29bec547be3e8dcdcbaed7e, type: 3}
-  m_Name: a
+  m_Script: {fileID: 11500000, guid: 2ae3de010696c9f43a5f9007ea88edf6, type: 3}
+  m_Name: JunkUseOnItem
   m_EditorClassIdentifier: 
-  Name: Poison
-  GUID: 3df88477-7c37-438a-84f9-e446a513ea4c
-  Icon: {fileID: 21300000, guid: 35f6862f4fc24af4f846e95669f84d49, type: 3}
+  Name: JunkUseOn
+  GUID: 65a9ba0c-917c-41e6-911e-22ab3cbcf8ba
+  Icon: {fileID: 0}
   CanDrop: 0
-  UsableItems: []
+  CanBeUsedOn: []
+  Result: {fileID: 0}
