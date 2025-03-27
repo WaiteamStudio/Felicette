@@ -1961,6 +1961,7 @@ MonoBehaviour:
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
   cameraFollow: {fileID: 0}
   unCameraFollow: {fileID: 0}
+  numbrOfTimesUsed: 0
 --- !u!61 &1169936515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3276,6 +3277,7 @@ MonoBehaviour:
   offTeleport: {fileID: 11400000, guid: 30bd09c135432d44087c5adce450fd47, type: 2}
   cameraFollow: {fileID: 11400000, guid: 453a186dc866a9542829a72655e8e3ac, type: 2}
   unCameraFollow: {fileID: 11400000, guid: ea7bf092db50b4546815da224f95de4c, type: 2}
+  numbrOfTimesUsed: 0
 --- !u!61 &1761227953
 BoxCollider2D:
   m_ObjectHideFlags: 0

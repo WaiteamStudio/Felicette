@@ -1,12 +1,9 @@
-using DialogueEditor;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "Junk", menuName = "new ItemDetails/Junk", order = 4)]
-public class JunkItemDetailsSo : ItemDetailsSO
+[CreateAssetMenu(fileName = "Sticker", menuName = "new ItemDetails/Sticker", order = 6)]
+public class StickerItemDetailsSo : ItemDetailsSO
 {
     [SerializeField]
     private List<ItemDetailsSO> CanBeUsedOn;
@@ -35,7 +32,8 @@ public class JunkItemDetailsSo : ItemDetailsSO
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         bool resultRemoving = inventoryController.TryRemoveItem(this);
-        conversationStart.RaiseWithout(0);
+        Debug.Log("Стикер удален");
+        //conversationStart.RaiseWithout(0);
 
         /*        InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
                 bool resultRemoving = inventoryController.TryRemoveItem(this);

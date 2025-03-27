@@ -12,6 +12,12 @@ public class GameEvent : ScriptableObject
             listeners[i].OnEventRaised(sender, data);
     }
 
+    public void RaiseWithout(object data)
+    {
+        for (int i = 0; i < listeners.Count; i++)
+            listeners[i].OnEventRaised(null, data); // Передаём null вместо sender
+    }
+
     public void RegisterListener(GameEventListener listener)
     {
         if (!listeners.Contains(listener))

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class CalculatorController : MonoBehaviour
 {
     [SerializeField] private TextMeshPro displayText;
     [SerializeField] private int maxCodeLength = 6;
+    [Header("Events")]
+    [SerializeField] public GameEvent miniGameEnd;
 
     private string currentInput = "";
     private string secretCode = "384467";
@@ -49,12 +52,18 @@ public class CalculatorController : MonoBehaviour
     {
         if (currentInput == secretCode)
         {
-            EndGame();
+            StartCoroutine(HandleRightCode());
         }
+    }
+
+    private IEnumerator HandleRightCode()
+    {
+        yield return new WaitForSeconds(1f);
+        EndGame();
     }
 
     private void EndGame()
     {
-        Debug.Log("Игра завершена! Вы ввели правильную комбинацию.");
+        miniGameEnd.Raise(this, 0);
     }
 }

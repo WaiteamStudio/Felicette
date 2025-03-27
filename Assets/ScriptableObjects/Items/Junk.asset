@@ -19,3 +19,4 @@ MonoBehaviour:
   CanBeUsedOn:
   - {fileID: 11400000, guid: 741a111edd079f740a51880f9eddec42, type: 2}
   Result: {fileID: 0}
+  conversationStart: {fileID: 11400000, guid: 70226b17a592624489a7a5444deafe86, type: 2}
