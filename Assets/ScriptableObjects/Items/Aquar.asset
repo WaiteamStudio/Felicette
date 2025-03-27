@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33832df26d7a4594f945c873dc5dd61c, type: 3}
+  m_Name: Aquar
+  m_EditorClassIdentifier: 
+  Name: Aquar
+  GUID: c3cc6f8c-90c4-42f3-b843-822b1e031404
+  Icon: {fileID: 21300000, guid: 2050a88d80385bc45a9799dbde23c7ff, type: 3}
+  CanDrop: 0
+  CanBeUsedOn:
+  - {fileID: 11400000, guid: 710a714f4a2696e4fbdd0a64fba68246, type: 2}
+  Result: {fileID: 0}
+  conversationStart: {fileID: 11400000, guid: d76412324ff83c74e8a39d61355a7112, type: 2}
