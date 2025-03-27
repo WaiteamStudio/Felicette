@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2795ae2349bc1746827f5b8c5d62b0d, type: 3}
+  m_Name: FIPS
+  m_EditorClassIdentifier: 
+  Name: FIPS
+  GUID: 8c971746-c5bd-497b-a244-4e889770bc8d
+  Icon: {fileID: 21300000, guid: e1df8b21810262644aebe7d75ac045d8, type: 3}
+  CanDrop: 0
+  CanBeUsedOn:
+  - {fileID: 11400000, guid: 5d7b74c7e2461f1499cc89c7b39de4c1, type: 2}
+  Result: {fileID: 0}
+  conversationStart: {fileID: 11400000, guid: 44b79852b60765b4e916b8150542defc, type: 2}

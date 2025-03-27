@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class WireGameManager : MonoBehaviour
 {
     [SerializeField] private List<WirePoint> allStartWirePoints;
+    [Header("Events")]
+    [SerializeField] public GameEvent wiresMiniGameEnd;
 
     private int totalWires;
     private int connectedWires = 0;
@@ -38,7 +41,14 @@ public class WireGameManager : MonoBehaviour
     private void WinGame()
     {
         gameWon = true;
-        Debug.Log("Победа! Все провода соединены правильно!");
+        StartCoroutine(HandleSuccessfulFinish());
+    }
+
+    private IEnumerator HandleSuccessfulFinish()
+    {
+        yield return new WaitForSeconds(1f);
+        wiresMiniGameEnd.Raise(this, 0);
+        GamePlayManager.thirdMissionChecker++;
     }
 
     private void OnDestroy()

@@ -125,6 +125,7 @@ public class TelMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         telMiniGameEnd.Raise(this, 0);
+        GamePlayManager.thirdMissionChecker++;
     }
 
     private IEnumerator Flash()

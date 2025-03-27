@@ -113,6 +113,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     {
         yield return new WaitForSeconds(1f);
         astMiniGameEnd.Raise(this, 0);
+        GamePlayManager.thirdMissionChecker++;
     }
 
     private void StartSpawningAsteroids()

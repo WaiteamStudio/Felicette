@@ -16,7 +16,7 @@ MonoBehaviour:
   - sound: 10
     audioClip: {fileID: 8300000, guid: 362da9c03fdc2444dbb2ab387c9b3d94, type: 3}
   - sound: 11
-    audioClip: {fileID: 8300000, guid: 0991171a32966de4998570aa2872040b, type: 3}
+    audioClip: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
   SoundsAudioMixerGroup: {fileID: 24300002, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
   MusicAudioMixer: {fileID: -6807021877174762177, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
