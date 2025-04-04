@@ -53,8 +53,8 @@ public class PlayerController : MonoBehaviour, IService
             ICursor icursor = hit.collider.GetComponent<ICursor>();
             if (icursor != null)
             {
-                //movement.UpdateFollowSpot(hit.collider.transform.position);
-                movement.UpdateFollowSpot(mousePosition);
+                movement.UpdateFollowSpot(hit.collider.transform.position);
+                //movement.UpdateFollowSpot(mousePosition);
                 StartCoroutine(WaitAndInteract(icursor, hit.collider.transform.position));
                 return;
             }
