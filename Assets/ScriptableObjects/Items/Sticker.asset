@@ -16,6 +16,7 @@ MonoBehaviour:
   GUID: 64abb694-7b73-45dc-8ed6-dea78f98e905
   Icon: {fileID: 21300000, guid: 586a7f42745dc5045811001a8dc38cae, type: 3}
   CanDrop: 0
-  CanBeUsedOn: []
+  CanBeUsedOn:
+  - {fileID: 11400000, guid: 9094cf2663da5be448889da247bd0c0b, type: 2}
   Result: {fileID: 0}
   conversationStart: {fileID: 11400000, guid: 382eb28f07144d044bf570822f980009, type: 2}

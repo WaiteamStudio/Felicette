@@ -37,7 +37,7 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
         Debug.Log($"Предмет {_inventoryItemSO.name} собран");
         Destroy(gameObject);
     }
-    private void Collect()
+    public void Collect()
     {
         bool ItemAdded = ServiceLocator.Current.Get<InventoryController>().TryAddItem(_inventoryItemSO);
         if (!ItemAdded)

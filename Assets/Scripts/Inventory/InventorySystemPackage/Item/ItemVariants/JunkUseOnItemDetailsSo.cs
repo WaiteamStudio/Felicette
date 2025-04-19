@@ -9,14 +9,13 @@ public class JunkUseOnItemDetailsSo : ItemDetailsSO
     private List<ItemDetailsSO> CanBeUsedOn;
     [SerializeField]
     private ItemDetailsSO Result;
-
     public override bool TryUseOn(ItemDetailsSO inventoryItemSO)
     {
         if (!CanBeUsedOn.Contains(inventoryItemSO))
             return false;
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
-        //если слота не было и он не появится - исключение
-        //если почему то нельзя ремувнуть - тоже баг, можно клонировать предметы
+        //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
         if (!inventoryController.HaveSpace(Result))
         {

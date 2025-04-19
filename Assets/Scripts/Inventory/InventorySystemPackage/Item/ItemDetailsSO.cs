@@ -1,5 +1,5 @@
 ﻿using System;
-//using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 [CreateAssetMenu(fileName = "ItemDetails", menuName = "new ItemDetails",order = 0)]
 public class ItemDetailsSO : ScriptableObject
@@ -23,7 +23,7 @@ public class ItemDetailsSO : ScriptableObject
         throw new NotImplementedException();
     }
 }
-/*[CustomEditor(typeof(ItemDetailsSO), true)]
+[CustomEditor(typeof(ItemDetailsSO), true)]
 public class ScriptableObjectWithGUIDEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -42,4 +42,4 @@ public class ScriptableObjectWithGUIDEditor : Editor
             EditorUtility.SetDirty(scriptableObject);
         }
     }
-}*/
+}

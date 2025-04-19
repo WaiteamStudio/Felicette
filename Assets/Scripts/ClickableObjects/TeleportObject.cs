@@ -17,7 +17,7 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] public GameEvent cameraFollow;
     [SerializeField] public GameEvent unCameraFollow;
 
-    public int numbrOfTimesUsed = 0; //счетчик для проверки первого захода в холл и звонка отца
+    public int numbrOfTimesUsed = 0; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
     private ICameraController cameraController;
     public Texture2D CursorTexture => cursorTexture;
@@ -35,7 +35,7 @@ public class TeleportObject : MonoBehaviour, ICursor
     {
         if (!PauseMenu.isPaused && ConversationManager.Instance.IsConversationActive == false)
         {
-            Debug.Log("Кликд");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅ");
             if (Time.time - lastClickTime <= doubleClickTime)
             {
                 Interact();

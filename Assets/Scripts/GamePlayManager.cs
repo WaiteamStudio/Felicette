@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
-    [SerializeField] private TeleportObject teleportObjectаFromHall;
+    [SerializeField] private TeleportObject teleportObjectFromHall;
     public static int thirdMissionChecker = 0;
 
     [Header("Events")]
@@ -14,7 +14,7 @@ public class GamePlayManager : MonoBehaviour
 
     private void Update()
     {
-        if (teleportObjectаFromHall.numbrOfTimesUsed == 1) //проверка в первый раз ли зашел в холл
+        if (teleportObjectFromHall.numbrOfTimesUsed == 1) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
         {
             StartCoroutine(StartCallFromDad());
         }
@@ -31,7 +31,7 @@ public class GamePlayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         enteredReceptionForTheFirstTime.Raise(this, 0);
-        teleportObjectаFromHall.numbrOfTimesUsed++;
+        teleportObjectFromHall.numbrOfTimesUsed++;
     }
 
     public void EndGame()

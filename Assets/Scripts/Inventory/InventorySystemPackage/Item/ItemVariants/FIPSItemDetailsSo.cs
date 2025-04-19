@@ -16,8 +16,8 @@ public class FIPSItemDetailsSo : ItemDetailsSO
         if (!CanBeUsedOn.Contains(inventoryItemSO))
             return false;
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
-        //если слота не было и он не появится - исключение
-        //если почему то нельзя ремувнуть - тоже баг, можно клонировать предметы
+        //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
         if (!inventoryController.HaveSpace(Result))
         {
@@ -32,7 +32,7 @@ public class FIPSItemDetailsSo : ItemDetailsSO
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         bool resultRemoving = inventoryController.TryRemoveItem(this);
-        //Debug.Log("Батарея удален");
+        //Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         conversationStart.RaiseWithout(0);
 
         /*        InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();

@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Pass", menuName = "new ItemDetails/Pass", order = 9)]
-public class PassItemDetailsSo : ItemDetailsSO
+[CreateAssetMenu(fileName = "NoteUseOnItem", menuName = "new ItemDetails/NoteUseOnItem", order = 12)]
+public class NoteUseOn : ItemDetailsSO
 {
     [SerializeField]
     private List<ItemDetailsSO> CanBeUsedOn;
     [SerializeField]
     private ItemDetailsSO Result;
-    [SerializeField] private GameEvent conversationStart;
-
     public override bool TryUseOn(ItemDetailsSO inventoryItemSO)
     {
         if (!CanBeUsedOn.Contains(inventoryItemSO))
@@ -32,31 +30,26 @@ public class PassItemDetailsSo : ItemDetailsSO
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         bool resultRemoving = inventoryController.TryRemoveItem(this);
-        //Debug.Log("������� ������");
-        conversationStart.RaiseWithout(0);
-
-        /*        InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
-                bool resultRemoving = inventoryController.TryRemoveItem(this);
-                bool resultRemoving2 = inventoryController.TryRemoveItem(syndicateItemDetailsSO);
-                if (!resultRemoving)
-                {
-                    Debug.Log("error removing" + this);
-                    return;
-                }
-                if (!resultRemoving2)
-                {
-                    Debug.Log("error removing " + syndicateItemDetailsSO);
-                    return;
-                }
-                bool resultAdding = inventoryController.TryAddItem(Result);
-                if (!resultAdding)
-                {
-                    Debug.Log("error adding");
-                    return;
-                }
-                if (resultAdding)
-                {
-                    Debug.Log("Succeful used " + this + " on " + syndicateItemDetailsSO);
-                }*/
+        bool resultRemoving2 = inventoryController.TryRemoveItem(syndicateItemDetailsSO);
+        if (!resultRemoving)
+        {
+            Debug.Log("error removing" + this);
+            return;
+        }
+        if (!resultRemoving2)
+        {
+            Debug.Log("error removing " + syndicateItemDetailsSO);
+            return;
+        }
+        bool resultAdding = inventoryController.TryAddItem(Result);
+        if (!resultAdding)
+        {
+            Debug.Log("error adding");
+            return;
+        }
+        if (resultAdding)
+        {
+            Debug.Log("Succeful used " + this + " on " + syndicateItemDetailsSO);
+        }
     }
 }

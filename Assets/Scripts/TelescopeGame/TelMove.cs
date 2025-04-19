@@ -18,7 +18,7 @@ public class TelMove : MonoBehaviour
 
     private bool drag = false;
 
-    // Добавленные параметры границ
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     public float minX = -10f;
     public float maxX = 10f;
     public float minY = -5f;
@@ -88,7 +88,7 @@ public class TelMove : MonoBehaviour
         
         if (drag){
             Vector3 targetPosition = origin - difference;
-            // Применяем ограничения перед установкой позиции
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
             targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
             transform.position = Vector2.Lerp(transform.position, targetPosition, dragSpeed);
@@ -98,9 +98,9 @@ public class TelMove : MonoBehaviour
             float distance = Vector2.Distance(transform.position, target.transform.position);
             if (distance < maxDistance)
             {
-                // Рассчитываем скорость мигания на основе расстояния
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 //float t = Mathf.InverseLerp(maxDistance, 0, distance);
-                //float flashSpeed = Mathf.Lerp(minFlashSpeed, maxFlashSpeed, t); // Обратите внимание на порядок
+                //float flashSpeed = Mathf.Lerp(minFlashSpeed, maxFlashSpeed, t); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
                 if (flashCoroutine == null)
                 {

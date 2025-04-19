@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour //скрипт для перезагрузки объектов при запуске лвла
+public class Test : MonoBehaviour //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 {
     public GameObject[] game; 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < game.Length; i++)
         {
