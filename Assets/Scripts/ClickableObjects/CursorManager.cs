@@ -57,7 +57,7 @@ public class CursorManager : MonoBehaviour
         {
             OnMouseButtonDown(mousePosition);
         }
-        //кнопка 
+        //пїЅпїЅпїЅпїЅпїЅпїЅ 
         if (Input.GetMouseButtonUp(0))
         {
             OnMouseButtonUp(mousePosition);

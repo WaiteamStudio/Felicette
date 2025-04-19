@@ -11,6 +11,8 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
     [SerializeField] private ItemDetailsSO _inventoryItemSO;
 
     [SerializeField] private LayerMask playerLayer;
+
+    //[SerializeField] private GameEvent eventUsed;
     public ItemDetailsSO InventoryItemSO => _inventoryItemSO;
 
     [HideInInspector] public UnityEvent<ItemDetailsSO> CollectStart;
@@ -69,6 +71,7 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
         if (itemDetailsSO.TryUseOn(_inventoryItemSO))
         {
             Debug.Log("SuccesfullyUsed!");
+            //eventUsed.Raise(this, 0);
             Destroy(gameObject);
             return true;
         }

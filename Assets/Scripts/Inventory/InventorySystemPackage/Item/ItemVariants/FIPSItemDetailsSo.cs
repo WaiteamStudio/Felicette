@@ -33,7 +33,8 @@ public class FIPSItemDetailsSo : ItemDetailsSO
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
         bool resultRemoving = inventoryController.TryRemoveItem(this);
         //Debug.Log("������� ������");
-        conversationStart.RaiseWithout(0);
+        //conversationStart.RaiseWithout(0);
+        conversationStart.Raise(inventoryController, 0);
 
         /*        InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
                 bool resultRemoving = inventoryController.TryRemoveItem(this);

@@ -9,13 +9,16 @@ public class GameEvent : ScriptableObject
     public void Raise(Component sender, object data)
     {
         for (int i = 0; i < listeners.Count; i++)
+        {
+            if (listeners[i] == null) continue;
             listeners[i].OnEventRaised(sender, data);
+        }
     }
 
     public void RaiseWithout(object data)
     {
         for (int i = 0; i < listeners.Count; i++)
-            listeners[i].OnEventRaised(null, data); // Передаём null вместо sender
+            listeners[i].OnEventRaised(null, data); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ null пїЅпїЅпїЅпїЅпїЅпїЅ sender
     }
 
     public void RegisterListener(GameEventListener listener)

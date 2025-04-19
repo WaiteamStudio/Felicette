@@ -21,6 +21,13 @@ public class GameEventListener : MonoBehaviour
 
     public void OnEventRaised(Component sender, object data)
     {
-        response.Invoke(sender, data);
+        if (response != null)
+        {
+            response.Invoke(sender, data);
+        }
+        else
+        {
+            Debug.LogWarning($"[GameEventListener] Event {gameEvent?.name} raised, but no response set on {gameObject.name}");
+        }
     }
 }

@@ -34,8 +34,9 @@ public class JunkItemDetailsSo : ItemDetailsSO
     protected override void UseOn(ItemDetailsSO syndicateItemDetailsSO)
     {
         InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
+        //conversationStart.RaiseWithout(0);
+        conversationStart.Raise(inventoryController, 0);
         bool resultRemoving = inventoryController.TryRemoveItem(this);
-        conversationStart.RaiseWithout(0);
 
         /*        InventoryController inventoryController = ServiceLocator.Current.Get<InventoryController>();
                 bool resultRemoving = inventoryController.TryRemoveItem(this);
