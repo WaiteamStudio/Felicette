@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GamePlayManager : MonoBehaviour
 {
     [SerializeField] private TeleportObject teleportObjectFromHall;
-    public static int thirdMissionChecker = 0;
+    [SerializeField] public int thirdMissionChecker = 0; //used to be static
 
     [Header("Events")]
     [SerializeField] public GameEvent enteredReceptionForTheFirstTime;

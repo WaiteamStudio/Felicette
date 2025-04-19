@@ -17,6 +17,7 @@ public class TelMove : MonoBehaviour
     public float dragSpeed = 0.01f;
 
     private bool drag = false;
+    private bool m_hasFinished = false;
 
     // ����������� ��������� ������
     public float minX = -10f;
@@ -117,15 +118,25 @@ public class TelMove : MonoBehaviour
                 }
             }
 
-            if (Vector2.Distance(transform.position, target.transform.position) < 1) StartCoroutine(HandleSuccessfulFinish());
+            //if (Vector2.Distance(transform.position, target.transform.position) < 1) StartCoroutine(HandleSuccessfulFinish());
+            if (!m_hasFinished && Vector2.Distance(transform.position, target.transform.position) < 1)
+            {
+                m_hasFinished = true;
+                StartCoroutine(HandleSuccessfulFinish());
+            }
         }
     }
 
     private IEnumerator HandleSuccessfulFinish()
     {
         yield return new WaitForSeconds(1f);
+/*        if (!m_hasFinished)
+        {
+            m_hasFinished = true;
+            telMiniGameEnd.Raise(this, 0);
+        }*/
         telMiniGameEnd.Raise(this, 0);
-        GamePlayManager.thirdMissionChecker++;
+        //GamePlayManager.thirdMissionChecker++;
     }
 
     private IEnumerator Flash()

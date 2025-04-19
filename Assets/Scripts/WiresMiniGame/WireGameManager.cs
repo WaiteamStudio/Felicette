@@ -48,7 +48,7 @@ public class WireGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         wiresMiniGameEnd.Raise(this, 0);
-        GamePlayManager.thirdMissionChecker++;
+        //GamePlayManager.thirdMissionChecker++;
     }
 
     private void OnDestroy()

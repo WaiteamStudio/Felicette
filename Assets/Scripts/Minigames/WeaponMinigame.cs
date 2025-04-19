@@ -13,6 +13,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     [Header("Events")]
     [SerializeField] public GameEvent astMiniGameEnd;
     private int score = 0;
+    private readonly Rect allowedArea = new Rect(285.34f, 207.51f, 1339.65f, 631.38f);
 
     public event Action OnGameEnded;
 
@@ -21,7 +22,8 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
-            
+            Debug.Log("Mouse: " + Input.mousePosition);
+
 
         }
 
@@ -67,9 +69,18 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     }
     private void Fire()
     {
+        if (!IsClickInsideScreen(Input.mousePosition))
+            return;
+
         MoveCrosshair(Input.mousePosition);
         //PlaySound
         TryCatchAsteroid(Input.mousePosition);
+    }
+
+    private bool IsClickInsideScreen(Vector3 screenPos)
+    {
+        // Левая верхняя точка — (197, 141), ширина 1526, высота 798
+        return allowedArea.Contains(screenPos);
     }
 
     private void TryCatchAsteroid(Vector3 mousePosition)
@@ -113,7 +124,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     {
         yield return new WaitForSeconds(1f);
         astMiniGameEnd.Raise(this, 0);
-        GamePlayManager.thirdMissionChecker++;
+        //GamePlayManager.thirdMissionChecker++;
     }
 
     private void StartSpawningAsteroids()
