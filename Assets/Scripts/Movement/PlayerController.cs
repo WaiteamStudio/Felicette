@@ -5,6 +5,18 @@ public class PlayerController : MonoBehaviour, IService
 {
     private IMovement movement;
     private Camera mainCamera;
+    private bool isMovingSoundPlaying = false;
+    private Vector2 lastPosition;
+    SoundManager _soundManager;
+    SoundManager SoundManager
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
 
     private void Start()
     {
@@ -18,6 +30,41 @@ public class PlayerController : MonoBehaviour, IService
         {
             HandleClick();
         }
+
+        Vector2 currentPosition = transform.position;
+        float distance = Vector2.Distance(currentPosition, lastPosition);
+        if (distance > 0.001f) // РґРІРёР¶РµС‚СЃСЏ
+        {
+            if (!isMovingSoundPlaying)
+            {
+                SoundManager.PlaySoundInPosition(SoundManager.Sound.PlayerMove, transform.position);
+                isMovingSoundPlaying = true;
+            }
+            else
+            {
+                // РѕР±РЅРѕРІР»СЏРµРј РїРѕР·РёС†РёСЋ Рё РїСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Р·РІСѓРє РµС‰С‘ РёРіСЂР°РµС‚
+                var source = SoundManager.GetSource(SoundManager.Sound.PlayerMove);
+                if (source != null)
+                {
+                    source.transform.position = transform.position;
+
+                    if (!source.isPlaying)
+                    {
+                        source.Play();
+                    }
+                }
+            }
+        }
+        else // СЃС‚РѕРёС‚
+        {
+            if (isMovingSoundPlaying)
+            {
+                SoundManager.StopSound(SoundManager.Sound.PlayerMove);
+                isMovingSoundPlaying = false;
+            }
+        }
+
+        lastPosition = currentPosition;
     }
 
     public void Move()
@@ -29,12 +76,12 @@ public class PlayerController : MonoBehaviour, IService
     private void HandleClick()
     {
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        float inventoryAreaHeight = Screen.height * 0.15f; // 20% высоты экрана
+        float inventoryAreaHeight = Screen.height * 0.15f; // 20% пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         float mouseY = Input.mousePosition.y;
 
         if (mouseY > Screen.height - inventoryAreaHeight)
         {
-            Debug.Log("Клик в области инвентаря, движение отменено");
+            Debug.Log("пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             return;
         }
 

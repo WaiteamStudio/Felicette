@@ -66,6 +66,8 @@ public class SoundManager : IService
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = GameAssets.SoundsAudioMixerGroup;
+        audioSource.volume = GetVolumeForSound(sound);
         audioSource.loop = false;
         audioSource.clip = GetAudioClip(sound);
         audioSource.maxDistance = 100f;
@@ -89,6 +91,11 @@ public class SoundManager : IService
     private static void SetAudioSourcePosition(AudioSource audioSource, Vector3 position)
     {
         audioSource.transform.position = position;
+    }
+
+    public AudioSource GetSource(Sound sound)
+    {
+        return soundSourcesDictionary.ContainsKey(sound) ? soundSourcesDictionary[sound] : null;
     }
 
     public void StopSound(Sound sound)
@@ -136,6 +143,18 @@ public class SoundManager : IService
             }
         }
     }
+
+    private float GetVolumeForSound(Sound sound)
+    {
+        switch (sound)
+        {
+            case Sound.PlayerMove:
+                return 1f;     
+            default:
+                return 1f; 
+        }
+    }
+
     private AudioMixerGroup GetAudioMixerGroup(AudioGroup audioGroup)
     {
         switch (audioGroup)

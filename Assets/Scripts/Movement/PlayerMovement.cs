@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour, IMovement, IService
     private Vector2 followSpot;
     private UnityEngine.AI.NavMeshAgent agent;
 
-    public Vector2 velocity => new Vector2(agent.velocity.x, agent.velocity.y); //Публичное свойство для получения скорости
+    public Vector2 velocity => new Vector2(agent.velocity.x, agent.velocity.y); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     private void Start()
     {
