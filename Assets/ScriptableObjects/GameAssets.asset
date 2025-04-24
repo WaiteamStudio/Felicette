@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: GameAssets
   m_EditorClassIdentifier: 
   soundAudioClipArray:
-  - sound: 10
+  - sound: 4
     audioClip: {fileID: 8300000, guid: 362da9c03fdc2444dbb2ab387c9b3d94, type: 3}
-  - sound: 11
+  - sound: 5
     audioClip: {fileID: 8300000, guid: 0991171a32966de4998570aa2872040b, type: 3}
-  - sound: 2
+  - sound: 0
     audioClip: {fileID: 8300000, guid: 7037cd312d25b7d4dbe9dbda6ffa390d, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: dd919e3b20d0d2242bc74b661b9e4c21, type: 3}
+  - sound: 8
+    audioClip: {fileID: 8300000, guid: 1566e1cf5a769264ea668bd09ecfb499, type: 3}
   audioMixer: {fileID: 24100000, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
   SoundsAudioMixerGroup: {fileID: -1678837101357359823, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}
   MusicAudioMixer: {fileID: -6807021877174762177, guid: fa24361e1e40c1a4fa703717ded92fce, type: 2}

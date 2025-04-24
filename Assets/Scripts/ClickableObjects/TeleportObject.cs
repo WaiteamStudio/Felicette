@@ -16,6 +16,16 @@ public class TeleportObject : MonoBehaviour, ICursor
     [SerializeField] public GameEvent offTeleport;
     [SerializeField] public GameEvent cameraFollow;
     [SerializeField] public GameEvent unCameraFollow;
+    SoundManager _soundManager;
+    SoundManager SoundManager
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
 
     public int numbrOfTimesUsed = 0; //������� ��� �������� ������� ������ � ���� � ������ ����
 
@@ -54,6 +64,7 @@ public class TeleportObject : MonoBehaviour, ICursor
     {
         onTpClickOnce.Raise(this, 0);
         player.Teleport(teleportPoint.position);
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.Teleport, transform.position);
         ChangePerspectiveScale();
         if (isCameraFollow)
         {

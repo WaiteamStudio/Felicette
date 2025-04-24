@@ -6,18 +6,16 @@ using UnityEngine.UIElements;
 public class SoundManager : IService
 {
     public enum Sound {
-        PlayerAttack,
-        PlayerJump,
         PlayerMove,
-        PlayerGetDamaged,
-        EnemyAttack,
-        EnemyDie,
         EnemyMove,
-        EnemyGetDamaged,
         ButtonOver,
         ButtonClick,
         ItemCollected,
-        ItemIsHolding
+        ItemIsHolding,
+        LocationChange,
+        Teleport,
+        DialogueNext,
+
     }
     public enum AudioGroup
     {
@@ -66,7 +64,8 @@ public class SoundManager : IService
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.outputAudioMixerGroup = GameAssets.SoundsAudioMixerGroup;
+        //audioSource.outputAudioMixerGroup = GameAssets.SoundsAudioMixerGroup;
+        audioSource.outputAudioMixerGroup = GetOutPutForSound(sound);
         audioSource.volume = GetVolumeForSound(sound);
         audioSource.loop = false;
         audioSource.clip = GetAudioClip(sound);
@@ -152,6 +151,17 @@ public class SoundManager : IService
                 return 1f;     
             default:
                 return 1f; 
+        }
+    }
+
+    private AudioMixerGroup GetOutPutForSound(Sound sound)
+    {
+        switch (sound)
+        {
+            case Sound.EnemyMove:
+                return GameAssets.MusicAudioMixer;
+            default:
+                return GameAssets.SoundsAudioMixerGroup;
         }
     }
 
