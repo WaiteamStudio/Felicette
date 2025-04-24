@@ -23,7 +23,7 @@ public class DialogueStarter : MonoBehaviour, ICursor
     public void Interact()
     {
         onDialogue.Raise(this, 0);
-        SoundManager.PlaySoundInPosition(SoundManager.Sound.DialogueNext, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.DialogueNext, transform.position);
         ConversationManager.Instance.StartConversation(myConversation);
     }
 }

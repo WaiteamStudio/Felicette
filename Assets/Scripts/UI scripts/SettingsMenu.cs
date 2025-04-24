@@ -10,14 +10,23 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         var root = uiDocument.rootVisualElement;
-        var volumeSlider = root.Q<Slider>("SoundSlider");
+        var musicSlider = root.Q<Slider>("MusicSlider");
+        var soundSlider = root.Q<Slider>("SoundSlider");
 
-        audioMixer.GetFloat("MainVolume", out float currentVolume);
-        volumeSlider.value = currentVolume;
+        if (audioMixer.GetFloat("MusicVolume", out float musicVolume))
+            musicSlider.value = musicVolume;
 
-        volumeSlider.RegisterValueChangedCallback(evt =>
+        if (audioMixer.GetFloat("SoundsVolume", out float soundsVolume))
+            soundSlider.value = soundsVolume;
+
+        musicSlider.RegisterValueChangedCallback(evt =>
         {
-            audioMixer.SetFloat("MainVolume", evt.newValue);
+            audioMixer.SetFloat("MusicVolume", evt.newValue);
+        });
+
+        soundSlider.RegisterValueChangedCallback(evt =>
+        {
+            audioMixer.SetFloat("SoundsVolume", evt.newValue);
         });
     }
 }

@@ -15,6 +15,7 @@ public class SoundManager : IService
         LocationChange,
         Teleport,
         DialogueNext,
+        Ring,
 
     }
     public enum AudioGroup
