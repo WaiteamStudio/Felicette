@@ -1,0 +1,994 @@
+fileFormatVersion: 2
+guid: 8dce7c95b13977946ab26627c56e64a5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kush_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35803c781abb14049ba7fadcad94eda8
+      internalID: -67076063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_1
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e38ef8d1cc8dd46817e79f7f6f6998
+      internalID: 213511744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_2
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ed070462fcd0c46b5ca5192f8a0f02
+      internalID: 1434701667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_3
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99dcb8724254a244a46700bab4767ab
+      internalID: -2032778401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_4
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae75502965886f4da0dfca3b78bda77
+      internalID: 333220832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_5
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a92eb2b691ee64582df2dd8aaf647f
+      internalID: -265931859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_6
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61018cc16e61ecc4990a6a9c727f7ead
+      internalID: -1909599574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_7
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57838c47cd01c842979a862008f39b2
+      internalID: -1271926553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_8
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71362dc28048c5d4f8c45a9cae391205
+      internalID: 1815438914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_9
+      rect:
+        serializedVersion: 2
+        x: 9450
+        y: 4617.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f09fee0f18a95542b217fe78e829907
+      internalID: -237396287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d12419be53ac647a285a84d57b159f
+      internalID: -1041676624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_11
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0016713d2e8cd534daebd4329e70b1a2
+      internalID: 1735548290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_12
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aea2c198833dde499d68065d9cfe0a5
+      internalID: -439404072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_13
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f276606e1e13f0449e3d37291719ee2
+      internalID: 1711817611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_14
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6708d4b0dc2a240b812479e4907ce6
+      internalID: 538617555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_15
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea812daf8a0ee654e9d92384f964dd8f
+      internalID: 1912644359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_16
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc274cfb6ad80646b72f43b15574e35
+      internalID: 550559005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_17
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c69a09593ec2634e97900456564d2b1
+      internalID: 163642119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_18
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c2b499fa20d6849b177dbed871bb16
+      internalID: 1606561020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_19
+      rect:
+        serializedVersion: 2
+        x: 9450
+        y: 3078.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880527c26bde40140bd32ab71ade3005
+      internalID: 497215071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6cb36b1dc68434aaa706c126afdf17
+      internalID: 713005065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_21
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0a27fbd597ea04ba7b0443ec256799
+      internalID: -924084008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_22
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa42735c502427643bc7cfa99fdbc639
+      internalID: -1607838895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_23
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fe8a146cb901e48a1e032a9d9dc86d
+      internalID: -1275966264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_24
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df4e63e093b553419a26a3a0cc50ac7
+      internalID: -505867870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_25
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447e19843fb4a3b47b6a93f7c23e8749
+      internalID: 822932688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_26
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d65555dc9f0314ea84a4fd8f45980d
+      internalID: 1637907321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_27
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d00e081228f33c409131cbec1421749
+      internalID: 156343758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_28
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b551dc07e981c4ea64f31ddd0bd95c
+      internalID: -1283044773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_29
+      rect:
+        serializedVersion: 2
+        x: 9450
+        y: 1539.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe993719aa379c45a5fc428f4e66e29
+      internalID: -2140692898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7c1cc962481d74ba53d59697afe6f5
+      internalID: -122130936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_31
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bac9b98e2acd34bab9dc7e923df526
+      internalID: -1012872522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_32
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c7afd79f69f54469b4723a3e2c42b1
+      internalID: 2124457656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_33
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e20b21c748d87948805165b100ddf4a
+      internalID: -2028884402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_34
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576be5eb56097c34a904933cca698cd3
+      internalID: -941214294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_35
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65be17537f3c5e744b3d66809d0df566
+      internalID: 424756084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_36
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755a238b619662143824112d565e84c4
+      internalID: 349404023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_37
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2260f3186410164785bf72e944bcf2f
+      internalID: -980936220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_38
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66157f26d19c410418ec00069747cdd7
+      internalID: -1536448537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kush_idle_39
+      rect:
+        serializedVersion: 2
+        x: 9450
+        y: 0.75
+        width: 1050
+        height: 1539.25
+      alignment: 9
+      pivot: {x: 0.2, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8552c81ea8c25c46af0cadc523c78b9
+      internalID: 364926105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      kush_idle_0: -67076063
+      kush_idle_1: 213511744
+      kush_idle_10: -1041676624
+      kush_idle_11: 1735548290
+      kush_idle_12: -439404072
+      kush_idle_13: 1711817611
+      kush_idle_14: 538617555
+      kush_idle_15: 1912644359
+      kush_idle_16: 550559005
+      kush_idle_17: 163642119
+      kush_idle_18: 1606561020
+      kush_idle_19: 497215071
+      kush_idle_2: 1434701667
+      kush_idle_20: 713005065
+      kush_idle_21: -924084008
+      kush_idle_22: -1607838895
+      kush_idle_23: -1275966264
+      kush_idle_24: -505867870
+      kush_idle_25: 822932688
+      kush_idle_26: 1637907321
+      kush_idle_27: 156343758
+      kush_idle_28: -1283044773
+      kush_idle_29: -2140692898
+      kush_idle_3: -2032778401
+      kush_idle_30: -122130936
+      kush_idle_31: -1012872522
+      kush_idle_32: 2124457656
+      kush_idle_33: -2028884402
+      kush_idle_34: -941214294
+      kush_idle_35: 424756084
+      kush_idle_36: 349404023
+      kush_idle_37: -980936220
+      kush_idle_38: -1536448537
+      kush_idle_39: 364926105
+      kush_idle_4: 333220832
+      kush_idle_5: -265931859
+      kush_idle_6: -1909599574
+      kush_idle_7: -1271926553
+      kush_idle_8: 1815438914
+      kush_idle_9: -237396287
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
