@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbb841d985fc1ba4696d8f37ac7cd8d2
+guid: ddba19e751a4b224795b7e09a88e279a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_D_RU_0
+      name: interact_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6c9e35c01abc284db7b8fe0b12fe266
-      internalID: -2119185332
+      spriteID: 811bc9694ffb55f489e17731547d9673
+      internalID: 1930168753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_1
+      name: interact_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e54d6d799188a7943a5750f3290bd135
-      internalID: 809097250
+      spriteID: f3164a59fed861b48b8c7ecd1d44a4ab
+      internalID: 2031516885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_2
+      name: interact_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69acc9d7726cf064685ffaf825036d04
-      internalID: 645139669
+      spriteID: fb8c4ce1cba9aae45a37f297df0c89f4
+      internalID: -2090280237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_3
+      name: interact_3
       rect:
         serializedVersion: 2
         x: 3000
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5a63ba628320cf46a2856eca96148f9
-      internalID: -490055835
+      spriteID: cf49302b85abca747a151b4130925d74
+      internalID: 892060484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_4
+      name: interact_4
       rect:
         serializedVersion: 2
         x: 4000
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16841c9dd109d949b6b4c1c1bc328bf
-      internalID: 1901558646
+      spriteID: 4f5aa7c3f92c3694f9da38719e224080
+      internalID: -293760567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_5
+      name: interact_5
       rect:
         serializedVersion: 2
         x: 5000
@@ -216,92 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8501a423e6cb68f4483c7672be17c957
-      internalID: -1181536711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_6
-      rect:
-        serializedVersion: 2
-        x: 6000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e10bb35b691ab554f9f8f6f0037aa04a
-      internalID: 1289931187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_7
-      rect:
-        serializedVersion: 2
-        x: 7000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64c10e405854e3b4bb671ab9a2d366ab
-      internalID: 489610766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_8
-      rect:
-        serializedVersion: 2
-        x: 8000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 033287f362e663649b92f4cd634324fc
-      internalID: 1644410637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_9
-      rect:
-        serializedVersion: 2
-        x: 9000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f39f3f02f3d9184fbc76e551cae7eba
-      internalID: -383849709
+      spriteID: b83ea8001ef07ef44b7d505c7c5344b9
+      internalID: -1143131779
       vertices: []
       indices: 
       edges: []
@@ -317,16 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk_D_RU_0: -2119185332
-      Walk_D_RU_1: 809097250
-      Walk_D_RU_2: 645139669
-      Walk_D_RU_3: -490055835
-      Walk_D_RU_4: 1901558646
-      Walk_D_RU_5: -1181536711
-      Walk_D_RU_6: 1289931187
-      Walk_D_RU_7: 489610766
-      Walk_D_RU_8: 1644410637
-      Walk_D_RU_9: -383849709
+      interact_0: 1930168753
+      interact_1: 2031516885
+      interact_2: -2090280237
+      interact_3: 892060484
+      interact_4: -293760567
+      interact_5: -1143131779
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
 {
+    private GameObject player;
+    private Animator playerAnimator;
 
     [SerializeField] private ItemDetailsSO _inventoryItemSO;
 
@@ -64,6 +67,11 @@ public class InventoryItemGO : MonoBehaviour, ICursor, IUsableOn
                 Collect();
             }
         }
+
+        player = GameObject.FindWithTag("Player");
+        playerAnimator = player.GetComponent<Animator>();
+        playerAnimator.SetTrigger("Pick Up");
+
     }
 
     public bool Use(ItemDetailsSO itemDetailsSO)

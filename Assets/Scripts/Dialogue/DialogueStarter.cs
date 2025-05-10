@@ -3,12 +3,17 @@ using DialogueEditor;
 
 public class DialogueStarter : MonoBehaviour, ICursor
 {
+
+    private GameObject player;
+    private Animator playerAnimator;
+
     [SerializeField] private NPCConversation myConversation;
     [SerializeField] private Texture2D cursorTexture;
     [Header("Events")]
     [SerializeField] public GameEvent onDialogue;
     SoundManager _soundManager;
     SoundManager SoundManager
+
     {
         get
         {
@@ -25,6 +30,13 @@ public class DialogueStarter : MonoBehaviour, ICursor
         onDialogue.Raise(this, 0);
         SoundManager.PlaySoundInPosition(SoundManager.Sound.DialogueNext, transform.position);
         ConversationManager.Instance.StartConversation(myConversation);
+
+        player = GameObject.FindWithTag("Player");
+        if (transform.position.y > player.transform.position.y-20)
+        {
+            playerAnimator = player.GetComponent<Animator>();
+            playerAnimator.SetTrigger("Interact");
+        }
     }
 }
 

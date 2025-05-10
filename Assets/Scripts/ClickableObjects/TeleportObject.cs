@@ -36,6 +36,10 @@ public class TeleportObject : MonoBehaviour, ICursor
     private float lastClickTime = 0f;
     public static bool IsClickHandled = false;
 
+    public bool isOffice = false;
+    public GameObject crimson;
+
+
     private void Start()
     {
         cameraController = FindObjectOfType<CameraController>();
@@ -92,6 +96,15 @@ public class TeleportObject : MonoBehaviour, ICursor
                         offTeleport.Raise(this, 0);
                     }
                 }*/
+        if (isOffice)
+        {
+            Animator crimanim = crimson.GetComponent<Animator>();
+            if(crimanim.GetCurrentAnimatorStateInfo(0).IsName("Crimson_stand_up"))
+                {
+                crimanim.SetTrigger("idle");
+                isOffice = false;
+            }
+        }
     }
 
     public void ChangePerspectiveScale()

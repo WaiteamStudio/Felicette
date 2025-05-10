@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbb841d985fc1ba4696d8f37ac7cd8d2
+guid: ad4279dc0edb36c4bb88e91a0e4002d3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 55
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,211 +97,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_D_RU_0
+      name: cleaner 1-Sheet-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
+        width: 1920
+        height: 1080
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6c9e35c01abc284db7b8fe0b12fe266
-      internalID: -2119185332
+      spriteID: 03150fc0531dbc54db3fbc6aed9c90aa
+      internalID: -1920861102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_1
+      name: cleaner 1-Sheet-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1920
         y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
+        width: 1920
+        height: 1080
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e54d6d799188a7943a5750f3290bd135
-      internalID: 809097250
+      spriteID: 585dcf3b51865b34788a03eca971833e
+      internalID: -414181123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_2
+      name: cleaner 1-Sheet-Sheet_2
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 3840
         y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
+        width: 1920
+        height: 1080
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69acc9d7726cf064685ffaf825036d04
-      internalID: 645139669
+      spriteID: 130c91ef9df72e24da81da142c4f847c
+      internalID: 1291687527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_3
+      name: cleaner 1-Sheet-Sheet_3
       rect:
         serializedVersion: 2
-        x: 3000
+        x: 5760
         y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
+        width: 1920
+        height: 1080
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5a63ba628320cf46a2856eca96148f9
-      internalID: -490055835
+      spriteID: b393e7083b949424fb91d2aea94b364a
+      internalID: 1217223837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_D_RU_4
+      name: cleaner 1-Sheet-Sheet_4
       rect:
         serializedVersion: 2
-        x: 4000
+        x: 7680
         y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
+        width: 1920
+        height: 1080
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16841c9dd109d949b6b4c1c1bc328bf
-      internalID: 1901558646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_5
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8501a423e6cb68f4483c7672be17c957
-      internalID: -1181536711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_6
-      rect:
-        serializedVersion: 2
-        x: 6000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e10bb35b691ab554f9f8f6f0037aa04a
-      internalID: 1289931187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_7
-      rect:
-        serializedVersion: 2
-        x: 7000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64c10e405854e3b4bb671ab9a2d366ab
-      internalID: 489610766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_8
-      rect:
-        serializedVersion: 2
-        x: 8000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 033287f362e663649b92f4cd634324fc
-      internalID: 1644410637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_D_RU_9
-      rect:
-        serializedVersion: 2
-        x: 9000
-        y: 0
-        width: 1000
-        height: 1400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f39f3f02f3d9184fbc76e551cae7eba
-      internalID: -383849709
+      spriteID: 467194c08e9cbb54785e43c5698e8e52
+      internalID: -318973735
       vertices: []
       indices: 
       edges: []
@@ -317,16 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk_D_RU_0: -2119185332
-      Walk_D_RU_1: 809097250
-      Walk_D_RU_2: 645139669
-      Walk_D_RU_3: -490055835
-      Walk_D_RU_4: 1901558646
-      Walk_D_RU_5: -1181536711
-      Walk_D_RU_6: 1289931187
-      Walk_D_RU_7: 489610766
-      Walk_D_RU_8: 1644410637
-      Walk_D_RU_9: -383849709
+      cleaner 1-Sheet-Sheet_0: -1920861102
+      cleaner 1-Sheet-Sheet_1: -414181123
+      cleaner 1-Sheet-Sheet_2: 1291687527
+      cleaner 1-Sheet-Sheet_3: 1217223837
+      cleaner 1-Sheet-Sheet_4: -318973735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
