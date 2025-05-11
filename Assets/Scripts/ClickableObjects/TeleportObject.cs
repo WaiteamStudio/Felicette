@@ -95,7 +95,7 @@ public class TeleportObject : MonoBehaviour, ICursor
                         ChangePerspectiveScale();
                         offTeleport.Raise(this, 0);
                     }
-                }*/
+                }*/ 
         if (isOffice)
         {
             Animator crimanim = crimson.GetComponent<Animator>();

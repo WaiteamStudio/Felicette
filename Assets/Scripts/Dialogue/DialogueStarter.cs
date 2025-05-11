@@ -32,10 +32,11 @@ public class DialogueStarter : MonoBehaviour, ICursor
         ConversationManager.Instance.StartConversation(myConversation);
 
         player = GameObject.FindWithTag("Player");
-        if (transform.position.y > player.transform.position.y-20)
+        if (transform.position.y > player.transform.position.y)
         {
             playerAnimator = player.GetComponent<Animator>();
-            playerAnimator.SetTrigger("Interact");
+            //playerAnimator.SetTrigger("Interact");
+            playerAnimator.SetBool("IsInteracting",true);
         }
     }
 }

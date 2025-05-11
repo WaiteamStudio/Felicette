@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour, IMovement, IService
     private UnityEngine.AI.NavMeshAgent agent;
     private Animator animator;
 
+    public GameObject dialogueBox;
+
 
     public Vector2 velocity => new Vector2(agent.velocity.x, agent.velocity.y); //��������� �������� ��� ��������� ��������
 
@@ -32,7 +34,9 @@ public class PlayerMovement : MonoBehaviour, IMovement, IService
             agent.isStopped = false;
         }
         FeliAnimateBasic();
+
     }
+
 
     public void UpdateFollowSpot(Vector2 newSpot)
     {
