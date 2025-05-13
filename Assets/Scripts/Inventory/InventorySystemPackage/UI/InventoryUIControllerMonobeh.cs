@@ -56,22 +56,22 @@ public class InventoryUIControllerMonobeh : MonoBehaviour, IService
     {
         if (!InventoryUIController.IsHoldingItem() && isPlayingSound)
         {
-            StopItemHoldingSound();
+            //StopItemHoldingSound();
             isPlayingSound = false;
         }
         else if(InventoryUIController.IsHoldingItem())
         {
-            PlayItemHoldingSound();
+            //PlayItemHoldingSound();
             isPlayingSound = true;
         }
     }
     private void PlayItemHoldingSound()
     {
-        SoundManager.PlaySoundInPosition(SoundManager.Sound.ItemIsHolding, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        //SoundManager.PlaySoundInPosition(SoundManager.Sound.ItemIsHolding, Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
     private void StopItemHoldingSound()
     {
-        SoundManager.StopSound(SoundManager.Sound.ItemIsHolding);
+       // SoundManager.StopSound(SoundManager.Sound.ItemIsHolding);
 
     }
 

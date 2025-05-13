@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Aquar
   GUID: c3cc6f8c-90c4-42f3-b843-822b1e031404
-  Icon: {fileID: 21300000, guid: 2050a88d80385bc45a9799dbde23c7ff, type: 3}
+  Icon: {fileID: 21300000, guid: 1fcd04db501a13148837da2562aff018, type: 3}
   CanDrop: 0
   CanBeUsedOn:
   - {fileID: 11400000, guid: 710a714f4a2696e4fbdd0a64fba68246, type: 2}
