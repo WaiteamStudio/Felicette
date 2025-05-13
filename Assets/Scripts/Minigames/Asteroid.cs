@@ -13,15 +13,33 @@ public class Asteroid : MonoBehaviour
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float rotationSpeedDeviation = 0.3f;
     [SerializeField] float lifeTime = 20f;
+    [SerializeField] int asteroidType = 0;
+
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] public Sprite[] sprites; 
+
     private void FixedUpdate()
     {
         Move();
         Rotate();
     }
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        asteroidType = 1;//UnityEngine.Random.Range(0, sprites.Length);
 
+        spriteRenderer.sprite = sprites[asteroidType];
+        animator.SetInteger("type", asteroidType);
+    }
+    private void Update()
+    {
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("destroyed"))Destroy(this.gameObject);
+    }
     public void DestroyAsteroid()
     {
-        Destroy(this.gameObject);
+        animator.SetTrigger("destroy");
     }
 
     public void Setup(Vector2 to)
@@ -30,6 +48,7 @@ public class Asteroid : MonoBehaviour
         gameObject.SetActive(true);
         RandomizeSpeedValues();
         Destroy(gameObject, lifeTime);
+
     }
     
     private void Rotate()
