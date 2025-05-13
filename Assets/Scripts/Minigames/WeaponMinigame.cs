@@ -92,8 +92,12 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
             Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
             if (asteroid != null)
             {
-                asteroid.DestroyAsteroid();
-                AddScore();
+                if (asteroid.destroyed == false)
+                {
+                    asteroid.destroyed = true;
+                    asteroid.DestroyAsteroid();
+                    AddScore();
+                }
             }
         }
     }

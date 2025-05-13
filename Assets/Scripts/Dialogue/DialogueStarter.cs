@@ -35,6 +35,11 @@ public class DialogueStarter : MonoBehaviour, ICursor
         if (transform.position.y > player.transform.position.y)
         {
             playerAnimator = player.GetComponent<Animator>();
+            if (transform.position.x < player.transform.position.x)
+            {
+                SpriteRenderer spriteRenderer = player.GetComponent<SpriteRenderer>();
+                spriteRenderer.flipX = true;
+            }
             //playerAnimator.SetTrigger("Interact");
             playerAnimator.SetBool("IsInteracting",true);
         }

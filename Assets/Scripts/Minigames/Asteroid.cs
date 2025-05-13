@@ -14,9 +14,11 @@ public class Asteroid : MonoBehaviour
     [SerializeField] float rotationSpeedDeviation = 0.3f;
     [SerializeField] float lifeTime = 20f;
     [SerializeField] int asteroidType = 0;
+    public bool destroyed = false;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+   
     [SerializeField] public Sprite[] sprites; 
 
     private void FixedUpdate()
