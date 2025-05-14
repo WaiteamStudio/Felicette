@@ -26,7 +26,12 @@ public class SoundManager : IService
         WireAttached,
         WireMove,
         FoundPlanet,
-
+        MainTheme,
+        MenuTheme,
+        Comics1,
+        Comics2,
+        ClockAlarm,
+        MotorCicle,
 
     }
     public enum AudioGroup
@@ -79,7 +84,7 @@ public class SoundManager : IService
         //audioSource.outputAudioMixerGroup = GameAssets.SoundsAudioMixerGroup;
         audioSource.outputAudioMixerGroup = GetOutPutForSound(sound);
         audioSource.volume = GetVolumeForSound(sound);
-        audioSource.loop = false;
+        audioSource.loop = GetLoop(sound);
         audioSource.clip = GetAudioClip(sound);
         audioSource.maxDistance = 100f;
         audioSource.spatialBlend = 1f;
@@ -166,11 +171,30 @@ public class SoundManager : IService
         }
     }
 
+    private bool GetLoop(Sound sound)
+    {
+        switch (sound)
+        {
+            case Sound.MainTheme:
+                return true;
+            case Sound.MenuTheme:
+                return true;
+            default:
+                return false;
+        }
+    }
+
     private AudioMixerGroup GetOutPutForSound(Sound sound)
     {
         switch (sound)
         {
-            case Sound.EnemyMove:
+            case Sound.MainTheme:
+                return GameAssets.MusicAudioMixer;
+            case Sound.MenuTheme:
+                return GameAssets.MusicAudioMixer;
+            case Sound.Comics1:
+                return GameAssets.MusicAudioMixer;
+            case Sound.Comics2:
                 return GameAssets.MusicAudioMixer;
             default:
                 return GameAssets.SoundsAudioMixerGroup;

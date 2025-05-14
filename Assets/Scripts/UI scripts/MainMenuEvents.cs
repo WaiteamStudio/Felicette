@@ -40,6 +40,11 @@ public class MainMenuEvents : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -96,9 +101,9 @@ public class MainMenuEvents : MonoBehaviour
         mainMenu.style.display = DisplayStyle.Flex;
     }
 
-    private void OnAllButtonsClick(ClickEvent evt) // для допустим звука нажатия на все кнопки
+    private void OnAllButtonsClick(ClickEvent evt) // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     {
-        Debug.Log("Бииип");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ");
         soundClip.Play();
     }
 }
