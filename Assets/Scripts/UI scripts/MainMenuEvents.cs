@@ -70,7 +70,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnContinueClick(ClickEvent evt)
     {
-        SceneManager.LoadScene("ToShow");
+        SceneManager.LoadScene("Comic");
     }
 
     private void OnNewGameClick(ClickEvent evt)

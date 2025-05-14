@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuTest.unity
     guid: a8f43c2b63378d148828be223a5868c3
   - enabled: 1
+    path: Assets/Scenes/Comic.unity
+    guid: c492126aef6c2a446ba2bc4017c88def
+  - enabled: 1
     path: Assets/Scenes/ToShow.unity
     guid: 6d69ce7503794df40bb2866c436681b1
   - enabled: 1
