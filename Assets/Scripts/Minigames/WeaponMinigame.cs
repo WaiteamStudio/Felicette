@@ -13,7 +13,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     [Header("Events")]
     [SerializeField] public GameEvent astMiniGameEnd;
     private int score = 0;
-    private readonly Rect allowedArea = new Rect(285.34f, 207.51f, 1339.65f, 631.38f);
+    //private readonly Rect allowedArea = new Rect(285.34f, 207.51f, 1339.65f, 631.38f);
 
     public event Action OnGameEnded;
 
@@ -93,7 +93,13 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
     private bool IsClickInsideScreen(Vector3 screenPos)
     {
         // Левая верхняя точка — (197, 141), ширина 1526, высота 798
-        return allowedArea.Contains(screenPos);
+        //return allowedArea.Contains(screenPos);
+        float normalizedX = screenPos.x / Screen.width;
+        float normalizedY = screenPos.y / Screen.height;
+
+        Rect normalizedArea = new Rect(0.15f, 0.19f, 0.70f, 0.58f);
+
+        return normalizedArea.Contains(new Vector2(normalizedX, normalizedY));
     }
 
     private void TryCatchAsteroid(Vector3 mousePosition)
