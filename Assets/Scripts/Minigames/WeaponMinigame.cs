@@ -17,6 +17,18 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
 
     public event Action OnGameEnded;
 
+    SoundManager _soundManager;
+    SoundManager SoundManager
+
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -72,6 +84,7 @@ public class WeaponMinigame : MonoBehaviour, IMinigame
         if (!IsClickInsideScreen(Input.mousePosition))
             return;
 
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.Blaster, transform.position);
         MoveCrosshair(Input.mousePosition);
         //PlaySound
         TryCatchAsteroid(Input.mousePosition);

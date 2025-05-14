@@ -16,6 +16,17 @@ public class SoundManager : IService
         Teleport,
         DialogueNext,
         Ring,
+        PylesosMove,
+        Blaster,
+        AsteroidHit,
+        RigthCard,
+        WrongCard,
+        DeliveryBtns,
+        MiniGameEnd,
+        WireAttached,
+        WireMove,
+        FoundPlanet,
+
 
     }
     public enum AudioGroup

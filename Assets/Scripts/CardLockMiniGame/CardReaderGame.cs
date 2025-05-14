@@ -3,22 +3,34 @@ using UnityEngine;
 
 public class CardReaderGame : MonoBehaviour
 {
-    [Header("Настройки картридера")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public float minTime; 
     public float maxTime;
     public bool requireUpToDown = true;
     public float minDistance; 
 
-    [Header("Визуальная обратная связь")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ")]
     public GameObject greenLight;
     public GameObject redLight;
 
-    [Header("Ивенты")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] public GameEvent miniGameEnd;
 
     private bool isCardInReader = false; 
     private float timeInReader = 0f;  
     private Vector2 entryPosition;
+
+    SoundManager _soundManager;
+    SoundManager SoundManager
+
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
 
     void Start()
     {
@@ -33,7 +45,7 @@ public class CardReaderGame : MonoBehaviour
             isCardInReader = true;
             timeInReader = 0f;
             entryPosition = other.transform.position;
-            Debug.Log("Карточка вставлена в картридер!");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
     }
 
@@ -74,12 +86,14 @@ public class CardReaderGame : MonoBehaviour
     {
         greenLight.SetActive(true);
         redLight.SetActive(false);
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.RigthCard, transform.position);
     }
 
     void ShowRedLight()
     {
         greenLight.SetActive(false);
         redLight.SetActive(true);
+        SoundManager.PlaySoundInPosition(SoundManager.Sound.WrongCard, transform.position);
 
         Invoke("TurnOffRedLight", 1f);
     }

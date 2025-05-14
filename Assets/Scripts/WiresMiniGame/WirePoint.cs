@@ -17,6 +17,18 @@ public class WirePoint : MonoBehaviour
     private SpriteRenderer wireSpriteRenderer;
     private bool wasObjectActive;
 
+    SoundManager _soundManager;
+    SoundManager SoundManager
+
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
+
     private void Start()
     {
         startPosition = transform.position;
@@ -68,6 +80,7 @@ public class WirePoint : MonoBehaviour
                 {
                     isConnected = true;
                     UpdateWireSprite(startPosition, endPoint.transform.position);
+                    SoundManager.PlaySoundInPosition(SoundManager.Sound.WireAttached, transform.position);
                     OnWireConnected?.Invoke();
                 }
                 else

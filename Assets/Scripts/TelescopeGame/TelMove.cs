@@ -36,6 +36,18 @@ public class TelMove : MonoBehaviour
     [Header("Events")]
     [SerializeField] public GameEvent telMiniGameEnd;
 
+    SoundManager _soundManager;
+    SoundManager SoundManager
+
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
+
     void Start()
     {
         resetCamera = transform.position;
@@ -122,6 +134,7 @@ public class TelMove : MonoBehaviour
             if (!m_hasFinished && Vector2.Distance(transform.position, target.transform.position) < 1)
             {
                 m_hasFinished = true;
+                SoundManager.PlaySoundInPosition(SoundManager.Sound.FoundPlanet, transform.position);
                 StartCoroutine(HandleSuccessfulFinish());
             }
         }

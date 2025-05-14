@@ -12,6 +12,19 @@ public class CalculatorController : MonoBehaviour
     private string currentInput = "";
     private string secretCode = "384467";
 
+    SoundManager _soundManager;
+    SoundManager SoundManager
+
+    {
+        get
+        {
+            if (_soundManager == null)
+                _soundManager = ServiceLocator.Current.Get<SoundManager>();
+            return _soundManager;
+        }
+    }
+
+
     void Start()
     {
         UpdateDisplay();
@@ -22,11 +35,13 @@ public class CalculatorController : MonoBehaviour
         if (currentInput.Length < maxCodeLength) 
         {
             currentInput += digit;
+            SoundManager.PlaySoundInPosition(SoundManager.Sound.DeliveryBtns, transform.position);
             UpdateDisplay();
             CheckForSecretCode();
         }
         else
         {
+            SoundManager.PlaySoundInPosition(SoundManager.Sound.DeliveryBtns, transform.position);
             Debug.Log("���������� ������������ ����� ����!");
         }
     }
@@ -36,6 +51,7 @@ public class CalculatorController : MonoBehaviour
         if (currentInput.Length > 0)
         {
             currentInput = currentInput.Substring(0, currentInput.Length - 1);
+            SoundManager.PlaySoundInPosition(SoundManager.Sound.DeliveryBtns, transform.position);
             UpdateDisplay();
         }
     }
