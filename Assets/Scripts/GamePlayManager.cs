@@ -36,7 +36,7 @@ public class GamePlayManager : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("MenuTest");
+        SceneManager.LoadScene("Titles");
     }
 
     public void Increment()

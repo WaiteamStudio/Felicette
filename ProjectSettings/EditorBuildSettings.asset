@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToShow.unity
     guid: 6d69ce7503794df40bb2866c436681b1
+  - enabled: 1
+    path: Assets/Scenes/Titles.unity
+    guid: 83e82e38e0f5435468ffc21687a71e8e
   m_configObjects: {}
