@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a019617c69584692488b418e838e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneIndex: 1
+  nextSceneIndex: 2
 --- !u!114 &89869368
 MonoBehaviour:
   m_ObjectHideFlags: 0
